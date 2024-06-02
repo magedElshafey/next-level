@@ -2,14 +2,16 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-const MainLayout = () => {
+import ContactHeader from "./ContactHeader";
+const MainLayout = ({ contact, navLinks }) => {
   return (
     <div>
-      <Navbar />
+      <ContactHeader data={contact} />
+      <Navbar links={navLinks} contact={contact} />
       <div className="main">
         <Outlet />
       </div>
-      <Footer />
+      <Footer navLinks={navLinks} contact={contact} />
     </div>
   );
 };

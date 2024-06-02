@@ -19,8 +19,10 @@ const CommonFunctions = () => {
   // initiate animation
   useEffect(() => {
     Aos.init({
-      offset: 0,
-      duration: 1200,
+      duration: 700,
+      offset: 120,
+      easing: "ease-out",
+      once: true,
     });
   }, []);
   return null;
