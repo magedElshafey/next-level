@@ -13,7 +13,14 @@ import Blog from "../pages/Blog";
 import Jobs from "../pages/Jobs";
 import ErrorPage from "../pages/ErrorPage";
 // data
-import { contactDetails, navLinks } from "../data/data.js";
+import {
+  contactDetails,
+  navLinks,
+  featuers,
+  aboutUs,
+  services,
+  works,
+} from "../data/data.js";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,7 +28,15 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        element: <Home />,
+        element: (
+          <Home
+            featuers={featuers}
+            aboutUs={aboutUs}
+            contact={contactDetails}
+            services={services}
+            works={works}
+          />
+        ),
         index: true,
         path: "/",
       },
