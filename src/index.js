@@ -9,11 +9,16 @@ import { QueryClientProvider, QueryClient } from "react-query";
 import AppRouter from "./routes/AppRouter";
 // toaster
 import { Toaster } from "react-hot-toast";
+// common functionality
+import CommonFunctions from "./components/common/CommonFunctions";
+// aos
+import "aos/dist/aos.css";
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <QueryClientProvider client={queryClient}>
     <Toaster position="top-center" reverseOrder={false} />
+    <CommonFunctions />
     <AppRouter />
   </QueryClientProvider>
 );

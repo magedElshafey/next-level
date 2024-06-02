@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
+import ScrollToTopAfterChangePage from "../components/common/ScrollToTopAfterChangePage";
 // pages
 import Home from "../pages/Home";
 import About from "../pages/About";
@@ -58,7 +59,11 @@ const router = createBrowserRouter([
   },
 ]);
 const AppRouter = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <RouterProvider router={router}>
+      <ScrollToTopAfterChangePage />
+    </RouterProvider>
+  );
 };
 
 export default AppRouter;
