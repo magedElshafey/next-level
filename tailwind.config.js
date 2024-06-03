@@ -7,7 +7,7 @@ module.exports = {
         mainColor: "#5145ed",
         secondColor: "#67e68d",
         darkColor: "#06054b",
-        bgColor: "#f6f6f6",
+        bgColor: "#f6f7f9",
       },
     },
   },

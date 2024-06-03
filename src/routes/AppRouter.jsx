@@ -20,6 +20,10 @@ import {
   aboutUs,
   services,
   works,
+  stats,
+  team,
+  steps,
+  revs,
 } from "../data/data.js";
 const router = createBrowserRouter([
   {
@@ -35,6 +39,10 @@ const router = createBrowserRouter([
             contact={contactDetails}
             services={services}
             works={works}
+            stats={stats}
+            team={team}
+            steps={steps}
+            revs={revs}
           />
         ),
         index: true,

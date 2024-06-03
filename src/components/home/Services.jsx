@@ -11,7 +11,7 @@ const Services = ({ data }) => {
     autoplay: true, // Enable autoplay
     speed: 500,
     autoplaySpeed: 1000,
-    slidesToShow: 3,
+    slidesToShow: 4,
     verical: false,
     slidesToScroll: 1,
     initialSlide: 0,
@@ -21,13 +21,13 @@ const Services = ({ data }) => {
       {
         breakpoint: 1224,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
         },
       },
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
         },
       },
 
@@ -64,7 +64,7 @@ const Services = ({ data }) => {
                   <div className=" bg-secondColor mx-auto text-white flex items-center justify-center w-20 h-20 rounded-[50%]">
                     <p>{item.icon}</p>
                   </div>
-                  <p className="font-bold text-center text-xl md:text-2xl lg:text-3xl text-darkColor my-3">
+                  <p className="font-bold text-center text-xl md:text-2xl  text-darkColor my-3">
                     {item.title}
                   </p>
                   <p className="text-slate-600 text-end">{item.desc}</p>

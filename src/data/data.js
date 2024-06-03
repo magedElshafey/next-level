@@ -9,6 +9,20 @@ import aboutImg from "../assets/about.jpg";
 import work1 from "../assets/work-01.jpg";
 import work2 from "../assets/work-02.jpg";
 import work3 from "../assets/work-03.jpg";
+// statics icons
+import { FaUser, FaMedal } from "react-icons/fa";
+import { MdPlaylistAddCheck } from "react-icons/md";
+import { AiFillProduct } from "react-icons/ai";
+// team
+import team1 from "../assets/team-01.jpg";
+import team2 from "../assets/team-02.jpg";
+import team3 from "../assets/team-03.jpg";
+import team4 from "../assets/team-04.jpg";
+//  steps icons
+import { FaRegCheckCircle } from "react-icons/fa";
+import { FaPencilRuler } from "react-icons/fa";
+import { FaRocket } from "react-icons/fa";
+
 // contact details
 export const contactDetails = {
   phone: "+966 56 507 5070",
@@ -154,5 +168,128 @@ export const works = [
     title: "لا بون بيري",
     category: "تصميم هوية بصرية",
     id: 7,
+  },
+];
+
+export const stats = [
+  {
+    icon: <AiFillProduct size={50} />,
+    title: "منتج",
+    num: 6,
+  },
+  {
+    icon: <FaUser size={50} />,
+    title: "موظف",
+    num: 50,
+  },
+  {
+    icon: <FaMedal size={50} />,
+    title: "مشاريع منتهية",
+    num: 116,
+  },
+  {
+    icon: <MdPlaylistAddCheck size={50} />,
+    title: "عملاؤنا",
+    num: 65,
+  },
+];
+
+export const team = [
+  {
+    img: team1,
+    name: "ماجد الشافعي",
+    position: "مطور مواقع",
+  },
+  {
+    img: team2,
+    name: "احمد سمير",
+    position: "رئيس مجلس الادارة",
+  },
+  {
+    img: team3,
+    name: "محمد عبد الصمد",
+    position: "مبرمج ومطور",
+  },
+  {
+    img: team4,
+    name: "سارة العيسوي",
+    position: "جرافيك ديزاينر",
+  },
+  {
+    img: team4,
+    name: "سلمي تامر",
+    position: "مديرة المشروعات",
+  },
+];
+
+export const steps = [
+  {
+    step: 1,
+    title: "إختر الخدمة",
+    desc: "إختر الخدمة المٌناسبة لتحقيق هدفك من بين خدمتنا المُختلفة",
+    icon: <FaRegCheckCircle size={20} />,
+  },
+  {
+    step: 2,
+    title: "عرض السعر و التعاقد",
+    desc: "فريقنا من الخبراء في مجالاتهم يسعون دائماً في مساعدة عملاءنا على تحقيق أهدافهم.",
+    icon: <FaPencilRuler size={20} />,
+  },
+  {
+    step: 3,
+    title: "رحلة التحول الرقمي",
+    desc: "نحرص على تزويدك بالحلول الرقمية المبتكرة، معتمدين على خبراتنا الكبيرة في مجال تكنولوجيا المعلومات",
+    icon: <FaMedal size={20} />,
+  },
+  {
+    step: 4,
+    title: "الإنطلاق",
+    desc: "نسعى دائماً لخدمة عملاؤنا على مدار الساعة ، كما نقوم بتدريب فريق العمل لديك",
+    icon: <FaRocket size={20} />,
+  },
+];
+
+export const revs = [
+  {
+    img: team1,
+    name: "ماجد الشافعي",
+    position: "مطور مواقع",
+    review: "شركة مية المية المة المية",
+  },
+  {
+    img: team2,
+    name: "ماجد الشافعي",
+    position: "مطور مواقع",
+    review: "شركة مية المية المة المية",
+  },
+  {
+    img: team3,
+    name: "ماجد الشافعي",
+    position: "مطور مواقع",
+    review: "شركة مية المية المة المية",
+  },
+  {
+    img: team4,
+    name: "يسر طلال",
+    position: "مطور مواقع",
+    review: "شركة مية المية المة المية",
+  },
+  {
+    img: team1,
+    name: "ماجد الشافعي",
+    position: "مطور مواقع",
+    review: "شركة مية المية المة المية",
+  },
+  {
+    img: team1,
+    name: "ماجد الشافعي",
+    position: "مطور مواقع",
+    review: "شركة مية المية المة المية",
+  },
+  {
+    img: team1,
+    name: "ماجد الشافعي",
+    position: "مطور مواقع",
+    review: "شركة مية المية المة المية",
   },
 ];

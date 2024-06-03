@@ -12,7 +12,7 @@
   --mainColor: #5145ed;
   --secondColor: #67e68d;
   --darkColor: #06054b;
-  --bgColor: #f6f6f6;
+  --bgColor: #f6f7f9;
 }
 
 html {
@@ -60,4 +60,12 @@ a.active {
 
 .box:hover .line {
   background-color: var(--mainColor);
+}
+
+.team-box:hover .team-img {
+  transform: scale(1.1);
+}
+
+.ending {
+  background: linear-gradient(to left, var(--mainColor), #0775a6);
 }
