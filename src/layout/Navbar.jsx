@@ -21,7 +21,7 @@ const Navbar = ({ contact }) => {
     };
   }, []);
   return (
-    <div className="w-screen  shadow-lg py-3 flex items-center ">
+    <div className="w-screen   bg-darkColor  shadow-lg py-3 flex items-center ">
       <div className="container mx-auto px-8 md:px-16">
         <div className="w-full flex items-center justify-between">
           <Logo />
@@ -34,7 +34,7 @@ const Navbar = ({ contact }) => {
           </div>
           <IoMdMenu
             size={30}
-            className="text-darkColor cursor-pointer md:hidden"
+            className="text-white cursor-pointer md:hidden"
             onClick={() => setShowSidebar(true)}
           />
         </div>
@@ -47,7 +47,7 @@ const Navbar = ({ contact }) => {
           <div className="py-3 px-5">
             <IoClose
               size={20}
-              className=" cursor-pointer"
+              className=" cursor-pointer text-white"
               onClick={() => setShowSidebar(false)}
             />
             <div className="my-5">

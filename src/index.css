@@ -50,9 +50,9 @@ a.active {
   }
 }
 
-.feat-box:hover .icon {
+/* .feat-box:hover .icon {
   color: white;
-}
+} */
 
 .feat-box:hover .feat-title {
   color: var(--secondColor);

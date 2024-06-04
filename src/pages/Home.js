@@ -13,6 +13,7 @@ import Clients from "../components/home/Clients";
 import Team from "../components/home/Team";
 import Steps from "../components/home/Steps";
 import Reviews from "../components/home/Reviews";
+import ContactDetails from "../components/home/ContactDetails";
 const Home = ({
   featuers,
   aboutUs,
@@ -30,7 +31,7 @@ const Home = ({
   };
   return (
     <div className="overflow-x-hidden">
-      <Hero img={heroImg} />
+      <Hero img={heroImg} text="الرئيسية" />
       <div className=" bg-bgColor w-screen py-4 flex items-center">
         <div className="container mx-auto px-8 md:px-16 mt-8 md:mt-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
@@ -93,6 +94,9 @@ const Home = ({
         <div className="container mx-auto px-8 md:px-16">
           <Reviews data={revs} />
         </div>
+      </div>
+      <div className="container mx-auto px-8 md:px-16 my-8 md:my-12">
+        <ContactDetails data={contact} />
       </div>
     </div>
   );

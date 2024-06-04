@@ -6,7 +6,7 @@ import SocialMedia from "../components/common/SocialMedia";
 const ContactHeader = ({ data }) => {
   const { i18n } = useTranslation();
   return (
-    <div className="w-screen bg-darkColor text-white py-3">
+    <div className="w-screen  shadow-lg py-3">
       <div className="container mx-auto px-8 md:px-16">
         <div className="w-full flex items-center justify-between flex-col md:flex-row gap-4 md:gap-3">
           <div className="flex items-center gap-4 md:gap-8">

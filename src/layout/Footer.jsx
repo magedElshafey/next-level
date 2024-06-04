@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SocialMedia from "../components/common/SocialMedia";
+import Logo from "../components/common/Logo";
 
 const Footer = ({ navLinks, contact }) => {
   const currentYear = new Date().getFullYear();
@@ -10,9 +11,7 @@ const Footer = ({ navLinks, contact }) => {
         <div className="container mx-auto px-8 md:px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-between gap-6 md:gap-8 lg:gap-16">
             <div>
-              <p className="font-bold mb-4 text-lg md:text-xl lg:text-2xl">
-                Logo
-              </p>
+              <Logo />
               <p className=" text-slate-300">
                 احلي سلوجان في البلدية هي شركة تقدم خدمات التسويق الالكتروني
                 للمنتجات والمشاريع التجارية والتسويق العقاري والتسويق التجاري

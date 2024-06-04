@@ -12,14 +12,11 @@ const WebsiteLinks = ({ isFlex, data, setShowSidebar }) => {
   return (
     <ul className={`${isFlex ? "flex items-center gap-3" : null}`}>
       {data.map((link, index) => (
-        <li
-          key={index}
-          className={` ${isFlex ? "text-darkColor" : "mb-4 text-white"}`}
-        >
+        <li key={index} className={`text-white ${isFlex ? null : "mb-4"}`}>
           <NavLink
             onClick={handleLinkClick}
             to={link.path}
-            className={`${isFlex ? "text-darkColor" : "text-white"} font-bold`}
+            className="text-white font-bold"
           >
             {link.title}
           </NavLink>
