@@ -14,6 +14,7 @@ import Team from "../components/home/Team";
 import Steps from "../components/home/Steps";
 import Reviews from "../components/home/Reviews";
 import ContactDetails from "../components/home/ContactDetails";
+import { useGlobalContext } from "../global/GlobalContext";
 const Home = ({
   featuers,
   aboutUs,
@@ -29,9 +30,10 @@ const Home = ({
   const handleWorksButtonClick = (id) => {
     navigate(`/works/${id}`);
   };
+  const { data } = useGlobalContext();
   return (
     <div className="overflow-x-hidden">
-      <Hero img={heroImg} text="الرئيسية" />
+      <Hero img={data.banner[0]} text="الرئيسية" />
       <div className=" bg-bgColor w-screen py-4 flex items-center">
         <div className="container mx-auto px-8 md:px-16 mt-8 md:mt-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
@@ -52,7 +54,7 @@ const Home = ({
           أعمالنا
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {works.slice(0, 4).map((item, index) => (
+          {data.work.slice(0, 4).map((item, index) => (
             <MainCard data={item} key={index} action={handleWorksButtonClick} />
           ))}
         </div>
@@ -77,7 +79,7 @@ const Home = ({
           </div>
         </div>
       </div>
-      <Clients />
+      <Clients data={data.clients} />
       <div className="container mx-auto px-8 md:px-16 my-8 md:my-12">
         <Team data={team} />
       </div>

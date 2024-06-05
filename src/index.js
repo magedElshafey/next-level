@@ -13,12 +13,16 @@ import { Toaster } from "react-hot-toast";
 import CommonFunctions from "./components/common/CommonFunctions";
 // aos
 import "aos/dist/aos.css";
+// context
+import GlobalContext from "./global/GlobalContext";
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <QueryClientProvider client={queryClient}>
     <Toaster position="top-center" reverseOrder={false} />
     <CommonFunctions />
-    <AppRouter />
+    <GlobalContext>
+      <AppRouter />
+    </GlobalContext>
   </QueryClientProvider>
 );

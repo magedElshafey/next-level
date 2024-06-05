@@ -69,3 +69,29 @@ a.active {
 .ending {
   background: linear-gradient(to left, var(--mainColor), #0775a6);
 }
+
+.scroll-content {
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  animation: scroll 5s linear infinite;
+  /* Adjust duration as needed */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-100% + 100vw));
+  }
+}
+
+.scroll-content:hover {
+  animation-play-state: paused;
+}
+
+.item {
+  margin-right: 10px;
+}

@@ -5,7 +5,7 @@ const MainCard = ({ data, action }) => {
     <div className="bg-white shadow-lg relative box cursor-pointer">
       <img
         loading="lazy"
-        src={data.img}
+        src={data.image}
         alt={data.title}
         className="w-full h-[150px] object-cover"
       />
@@ -13,7 +13,7 @@ const MainCard = ({ data, action }) => {
         <p className="text-center text-mainColor font-bold text-xl md:text-2xl mb-3">
           {data.title}
         </p>
-        <p className=" text-darkColor mb-4">{data.category}</p>
+        <p className=" text-darkColor mb-4">{data.description}</p>
         <div className="flex items-center justify-center">
           <MainBtn text="مشاهدة المزيد" action={() => action(data.id)} />
         </div>

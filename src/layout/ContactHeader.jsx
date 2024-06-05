@@ -3,8 +3,11 @@ import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt, FaPhone } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import SocialMedia from "../components/common/SocialMedia";
+import { useGlobalContext } from "../global/GlobalContext";
 const ContactHeader = ({ data }) => {
   const { i18n } = useTranslation();
+  const { data: test } = useGlobalContext();
+  console.log("this is the data from contact", test);
   return (
     <div className="w-screen  shadow-lg py-3">
       <div className="container mx-auto px-8 md:px-16">
