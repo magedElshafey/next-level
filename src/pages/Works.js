@@ -27,16 +27,16 @@ const Works = () => {
   const handleNavigate = (index) => navigate(`/works/${++index}`);
   return (
     <div>
-      <Hero img={heroImg} />
+      <Hero img={heroImg} text="أعمالنا" />
       <div className="my-8 md:my-12">
         <Clients data={globalData.clients} />
       </div>
       <div className="container mx-auto px-8 md:px-16 my-8 md:my-12">
-        <div className="flex items-center justify-center gap-4 md:gap-6 flex-wrap my-8 overflow-hidden ">
+        <div className="flex items-center justify-center gap-4 md:gap-6 flex-wrap my-8">
           {data?.data?.data?.categories.map((item, index) => (
             <button
               onClick={() => handleButtonClick(item)}
-              className={`px-4 py-3 rounded-lg duration-300 bg-darkColor text-white flex items-center justify-center w-[150px] md:w-[250px] ${
+              className={`px-4 py-3 rounded-lg duration-300 bg-darkColor text-white flex items-center justify-center w-fit ${
                 activeId === item.id ? "bg-secondColor text-white" : null
               }`}
               key={index}
