@@ -15,7 +15,7 @@ const MainCard = ({ data, action }) => {
         </p>
         <p className=" text-darkColor mb-4">{data.description}</p>
         <div className="flex items-center justify-center">
-          <MainBtn text="مشاهدة المزيد" action={() => action(data.id)} />
+          <MainBtn text="مشاهدة المزيد" action={action} />
         </div>
         <div className=" absolute bottom-0 left-0 w-full h-[4px] duration-300 bg-secondColor line rounded-[5px]"></div>
       </div>

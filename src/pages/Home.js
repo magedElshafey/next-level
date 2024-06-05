@@ -27,8 +27,8 @@ const Home = ({
   revs,
 }) => {
   const navigate = useNavigate();
-  const handleWorksButtonClick = (id) => {
-    navigate(`/works/${id}`);
+  const handleWorksButtonClick = (index) => {
+    navigate(`/works/${++index}`);
   };
   const { data } = useGlobalContext();
   return (
@@ -55,7 +55,11 @@ const Home = ({
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {data.work.slice(0, 4).map((item, index) => (
-            <MainCard data={item} key={index} action={handleWorksButtonClick} />
+            <MainCard
+              data={item}
+              key={index}
+              action={() => handleWorksButtonClick(index)}
+            />
           ))}
         </div>
       </div>
