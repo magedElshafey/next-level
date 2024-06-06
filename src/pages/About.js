@@ -5,12 +5,13 @@ import Spinner from "../components/common/Spinner";
 import { useQuery } from "react-query";
 import { request } from "../services/axios";
 import Team from "../components/home/Team";
+import ContactDetails from "../components/home/ContactDetails";
 const fetchData = async () => {
   return await request({
     url: "/about",
   });
 };
-const About = ({ team }) => {
+const About = ({ team, contact }) => {
   const { isLoading, data } = useQuery("about", fetchData);
   if (isLoading) {
     return <Spinner />;
@@ -48,6 +49,9 @@ const About = ({ team }) => {
           : null}
         <div className="my-8 md:my-12">
           <Team data={team} />
+        </div>
+        <div className="my-8 md:my-12">
+          <ContactDetails data={contact} />
         </div>
       </div>
     </div>

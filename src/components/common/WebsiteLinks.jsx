@@ -10,7 +10,7 @@ const WebsiteLinks = ({ isFlex, data, setShowSidebar }) => {
     }
   };
   return (
-    <ul className={`${isFlex ? "flex items-center gap-3" : null}`}>
+    <ul className={`${isFlex ? "flex items-center gap-5" : null}`}>
       {data.map((link, index) => (
         <li key={index} className={`text-white ${isFlex ? null : "mb-4"}`}>
           <NavLink
