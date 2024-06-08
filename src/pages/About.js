@@ -11,7 +11,7 @@ const fetchData = async () => {
     url: "/about",
   });
 };
-const About = ({ team, contact }) => {
+const About = () => {
   const { isLoading, data } = useQuery("about", fetchData);
   if (isLoading) {
     return <Spinner />;
@@ -48,10 +48,10 @@ const About = ({ team, contact }) => {
             ))
           : null}
         <div className="my-8 md:my-12">
-          <Team data={team} />
+          <Team />
         </div>
         <div className="my-8 md:my-12">
-          <ContactDetails data={contact} />
+          <ContactDetails />
         </div>
       </div>
     </div>

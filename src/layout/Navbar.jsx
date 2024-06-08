@@ -6,7 +6,7 @@ import WebsiteLinks from "../components/common/WebsiteLinks";
 import { navLinks } from "../data/data";
 import SocialMedia from "../components/common/SocialMedia";
 
-const Navbar = ({ contact }) => {
+const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const sidebarRef = useRef();
   const handleClickOutside = (event) => {
@@ -58,7 +58,7 @@ const Navbar = ({ contact }) => {
               />
             </div>
             <div className="w-full flex items-center justify-center">
-              <SocialMedia data={contact} />
+              <SocialMedia />
             </div>
           </div>
         </div>

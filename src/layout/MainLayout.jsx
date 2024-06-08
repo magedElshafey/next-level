@@ -6,7 +6,7 @@ import ContactHeader from "./ContactHeader";
 import Ending from "./Ending";
 import Meta from "../components/common/Meta";
 import { useGlobalContext } from "../global/GlobalContext";
-const MainLayout = ({ contact, navLinks }) => {
+const MainLayout = ({ navLinks }) => {
   const { data } = useGlobalContext();
   return (
     <div>
@@ -15,13 +15,13 @@ const MainLayout = ({ contact, navLinks }) => {
         title={data?.site?.title}
         desc={data?.site?.description}
       />
-      <ContactHeader data={contact} />
-      <Navbar links={navLinks} contact={contact} />
+      <ContactHeader />
+      <Navbar links={navLinks} />
       <div className="main">
         <Outlet />
       </div>
       <Ending />
-      <Footer navLinks={navLinks} contact={contact} />
+      <Footer navLinks={navLinks} />
     </div>
   );
 };

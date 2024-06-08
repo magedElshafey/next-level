@@ -22,6 +22,7 @@ html {
 body {
   overflow-x: hidden !important;
   text-transform: capitalize;
+  font-family: "Cairo", sans-serif;
 }
 
 a.active {

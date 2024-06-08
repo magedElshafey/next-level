@@ -15,17 +15,7 @@ import Steps from "../components/home/Steps";
 import Reviews from "../components/home/Reviews";
 import ContactDetails from "../components/home/ContactDetails";
 import { useGlobalContext } from "../global/GlobalContext";
-const Home = ({
-  featuers,
-  aboutUs,
-  contact,
-  services,
-  works,
-  stats,
-  team,
-  steps,
-  revs,
-}) => {
+const Home = ({ featuers, services, stats, steps }) => {
   const navigate = useNavigate();
   const handleWorksButtonClick = (index) => {
     navigate(`/works/${++index}`);
@@ -44,7 +34,7 @@ const Home = ({
         </div>
       </div>
       <div className="container mx-auto px-8 md:px-16 mt-8 md:mt-12 overflow-x-hidden">
-        <About aboutUs={aboutUs} contact={contact} />
+        <About />
       </div>
 
       <Services data={services} />
@@ -85,7 +75,7 @@ const Home = ({
       </div>
       <Clients data={data.clients} />
       <div className="container mx-auto px-8 md:px-16 my-8 md:my-12">
-        <Team data={team} />
+        <Team />
       </div>
       <div className="bg-darkColor my-8 md:my-12 py-5 flex items-center">
         <div className="container mx-auto px-8 md:px-16">
@@ -96,13 +86,13 @@ const Home = ({
           </div>
         </div>
       </div>
-      <div className="bg-bgColor py-5 flex items-center">
+      {/* <div className="bg-bgColor py-5 flex items-center">
         <div className="container mx-auto px-8 md:px-16">
           <Reviews data={revs} />
         </div>
-      </div>
+      </div> */}
       <div className="container mx-auto px-8 md:px-16 my-8 md:my-12">
-        <ContactDetails data={contact} />
+        <ContactDetails />
       </div>
     </div>
   );

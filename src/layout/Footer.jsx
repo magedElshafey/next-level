@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SocialMedia from "../components/common/SocialMedia";
 import Logo from "../components/common/Logo";
-
-const Footer = ({ navLinks, contact }) => {
+import { useGlobalContext } from "../global/GlobalContext";
+const Footer = ({ navLinks }) => {
   const currentYear = new Date().getFullYear();
+  const { data } = useGlobalContext();
   return (
     <>
       <div className="w-screen py-3 flex items-center bg-darkColor text-white">
@@ -12,11 +13,7 @@ const Footer = ({ navLinks, contact }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-between gap-6 md:gap-8 lg:gap-16">
             <div>
               <Logo />
-              <p className=" text-slate-300">
-                احلي سلوجان في البلدية هي شركة تقدم خدمات التسويق الالكتروني
-                للمنتجات والمشاريع التجارية والتسويق العقاري والتسويق التجاري
-                والتسويق التجاري والتسويق التجاري والتسو
-              </p>
+              <p className=" text-slate-300 mt-5">{data?.site?.selgon}</p>
             </div>
             <div>
               <p className="font-bold mb-4 text-lg md:text-xl lg:text-2xl">
@@ -44,25 +41,25 @@ const Footer = ({ navLinks, contact }) => {
                   <a
                     dir="ltr"
                     className=" text-slate-300 hover:text-white hover:underline"
-                    href={`https://wa.me/${contact.phone}`}
+                    href={`https://wa.me/${data?.contact.whatsapp}`}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {contact.phone}
+                    {data?.contact.whatsapp}
                   </a>
                 </li>
                 <li className="mb-3">
                   <a
                     className=" text-slate-300 hover:text-white hover:underline lowercase"
-                    href={`https:mailto:/${contact.email}`}
+                    href={`mailto:${data?.contact.email}`}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {contact.email}
+                    {data?.contact.email}
                   </a>
                 </li>
                 <li className="mb-3 text-slate-300 hover:text-white hover:underline">
-                  {contact.address}
+                  {data?.contact.address}
                 </li>
               </ul>
             </div>
@@ -70,7 +67,7 @@ const Footer = ({ navLinks, contact }) => {
               <p className="font-bold mb-4 text-lg md:text-xl lg:text-2xl">
                 تابعنا
               </p>
-              <SocialMedia data={contact} />
+              <SocialMedia />
             </div>
           </div>
         </div>

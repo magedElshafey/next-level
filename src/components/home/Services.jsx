@@ -10,7 +10,7 @@ const Services = ({ data }) => {
     arrows: false,
     autoplay: true, // Enable autoplay
     speed: 500,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 5000,
     slidesToShow: 4,
     verical: false,
     slidesToScroll: 1,

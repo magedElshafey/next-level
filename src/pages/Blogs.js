@@ -28,7 +28,9 @@ const Blogs = () => {
             <div
               key={index}
               className={`flex items-center mb-3 md:mb-3 gap-4 md:gap-8 flex-col ${
-                index % 2 === 0 ? "  md:flex-row" : " md:flex-row-reverse"
+                index % 2 === 0
+                  ? "  md:flex-row"
+                  : " md:flex-row-reverse bg-bgColor p-3"
               }`}
             >
               <div className="md:w-1/2">

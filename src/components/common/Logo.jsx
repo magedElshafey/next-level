@@ -1,12 +1,13 @@
 import React from "react";
-import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "../../global/GlobalContext";
 const Logo = () => {
+  const { data } = useGlobalContext();
   return (
     <Link to="/">
       <img
         loading="lazy"
-        src={logo}
+        src={data?.site?.logo}
         alt="logo"
         className="  object-cover w-[100px] md:w-[200px]"
       />

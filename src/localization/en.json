@@ -1,3 +1,21 @@
 {
-  "test": "test"
+  "test": "test",
+  "nameError": "The name cannot contain numbers",
+  "phoneError": "This field must contain numbers only",
+  "yearError": "Graduation year cannot be in the future",
+  "educationError": "this field cannot have any number",
+  "name": "name",
+  "email": "email",
+  "phone": "phone",
+  "address": "address",
+  "birthday": "birthday",
+  "education": "Educational Qualification",
+  "year": "Graduation Year",
+  "exp": "he Latest job experience",
+  "company": "company name",
+  "period": "work period",
+  "path": "Target Career Path",
+  "salary": "salary",
+  "reason": "What makes you qualified for the job ?",
+  "send": "send"
 }
