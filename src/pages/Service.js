@@ -28,6 +28,7 @@ const Service = () => {
       <Hero
         text={data?.data?.data?.service?.title}
         img={data?.data?.data?.service.image}
+        hasImg={true}
       />
       <div className="container mx-auto px-8 md:px-16 my-8 md:my-12">
         <div className=" bg-bgColor p-3 flex items-center">

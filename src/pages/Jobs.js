@@ -220,7 +220,7 @@ const Jobs = () => {
   }
   return (
     <div>
-      <Hero img={heroImg} text="انضم الي فريق نيكست ليفل" />
+      <Hero img={heroImg} text="انضم الي فريق نيكست ليفل" hasImg={true} />
       <div className="container mx-auto px-8 md:px-16 my-8 md:my-12">
         <div className=" bg-bgColor p-4 rounded-lg">
           <form onSubmit={handleClick}>

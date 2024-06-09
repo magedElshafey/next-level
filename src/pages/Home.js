@@ -23,7 +23,7 @@ const Home = ({ services, stats, steps }) => {
   const { data } = useGlobalContext();
   return (
     <div className="overflow-x-hidden">
-      <Hero img={data.banner[0]} text="الرئيسية" />
+      <Hero img={data.banner[0]} text="الرئيسية" hasImg={true} />
       <div className=" bg-bgColor w-screen py-4 flex items-center">
         <div className="container mx-auto px-8 md:px-16 mt-8 md:mt-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">

@@ -24,10 +24,10 @@ const Works = () => {
   const handleButtonClick = (item) => {
     setActiveId(item.id);
   };
-  const handleNavigate = (index) => navigate(`/works/${++index}`);
+  const handleNavigate = (id) => navigate(`/works/${id}`);
   return (
     <div>
-      <Hero img={heroImg} text="أعمالنا" />
+      <Hero img={heroImg} text="أعمالنا" hasImg={true} />
       <div className="my-8 md:my-12">
         <Clients data={globalData.clients} />
       </div>
@@ -53,7 +53,7 @@ const Works = () => {
                   <MainCard
                     key={index}
                     data={item}
-                    action={() => handleNavigate(index)}
+                    action={() => handleNavigate(item.id)}
                   />
                 )
               )}

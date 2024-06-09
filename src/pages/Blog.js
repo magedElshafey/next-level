@@ -31,6 +31,7 @@ const Blog = () => {
       <Hero
         text={data?.data?.data?.blog?.title}
         img={data?.data?.data?.blog?.addtionalImage}
+        hasImg={true}
       />
       <div className="container mx-auto px-8 md:px-16 my-8 md:my-12">
         <div className=" bg-bgColor p-3 flex items-center">
