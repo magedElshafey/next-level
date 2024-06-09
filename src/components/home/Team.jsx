@@ -53,7 +53,7 @@ const Team = () => {
                 <img
                   alt={item.name}
                   src={item.image}
-                  className="w-full h-[300px] object-cover duration-300 team-img"
+                  className="w-full h-[350px] object-cover duration-300 team-img"
                 />
                 <p className="font-bold text-center text-xl md:text-2xl p-2  text-mainColor my-3">
                   {item.name}

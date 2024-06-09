@@ -15,7 +15,7 @@ import Steps from "../components/home/Steps";
 import Reviews from "../components/home/Reviews";
 import ContactDetails from "../components/home/ContactDetails";
 import { useGlobalContext } from "../global/GlobalContext";
-const Home = ({ featuers, services, stats, steps }) => {
+const Home = ({ services, stats, steps }) => {
   const navigate = useNavigate();
   const handleWorksButtonClick = (index) => {
     navigate(`/works/${++index}`);
@@ -27,7 +27,7 @@ const Home = ({ featuers, services, stats, steps }) => {
       <div className=" bg-bgColor w-screen py-4 flex items-center">
         <div className="container mx-auto px-8 md:px-16 mt-8 md:mt-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-            {featuers.map((item, index) => (
+            {data?.features.map((item, index) => (
               <Featuers key={index} data={item} />
             ))}
           </div>

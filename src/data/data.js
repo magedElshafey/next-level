@@ -10,9 +10,9 @@ import { PiLampPendantFill } from "react-icons/pi";
 // import work2 from "../assets/work-02.jpg";
 // import work3 from "../assets/work-03.jpg";
 // statics icons
-import { FaUser, FaMedal } from "react-icons/fa";
-import { MdPlaylistAddCheck } from "react-icons/md";
-import { AiFillProduct } from "react-icons/ai";
+import { FaMedal } from "react-icons/fa";
+// import { MdPlaylistAddCheck } from "react-icons/md";
+// import { AiFillProduct } from "react-icons/ai";
 // team
 // import team1 from "../assets/team-01.jpg";
 // import team2 from "../assets/team-02.jpg";
@@ -64,24 +64,24 @@ export const navLinks = [
   },
 ];
 
-export const featuers = [
-  {
-    icon: <FaRegMoneyBillAlt size={40} />,
-    title: "أفضل سعر",
-  },
-  {
-    icon: <MdSecurity size={40} />,
-    title: "حماية قوية",
-  },
-  {
-    icon: <IoSettings size={40} />,
-    title: "دعم فني 24/7",
-  },
-  {
-    icon: <PiLampPendantFill size={40} />,
-    title: "حلول مبتكرة",
-  },
-];
+// export const featuers = [
+//   {
+//     icon: <FaRegMoneyBillAlt size={40} />,
+//     title: "أفضل سعر",
+//   },
+//   {
+//     icon: <MdSecurity size={40} />,
+//     title: "حماية قوية",
+//   },
+//   {
+//     icon: <IoSettings size={40} />,
+//     title: "دعم فني 24/7",
+//   },
+//   {
+//     icon: <PiLampPendantFill size={40} />,
+//     title: "حلول مبتكرة",
+//   },
+// ];
 // export const aboutUs = {
 //   img: aboutImg,
 //   title: "نحن دليلك في رحلة التحول الرقمي",
@@ -171,28 +171,28 @@ export const services = [
 //   },
 // ];
 
-export const stats = [
-  {
-    icon: <AiFillProduct size={50} />,
-    title: "منتج",
-    num: 6,
-  },
-  {
-    icon: <FaUser size={50} />,
-    title: "موظف",
-    num: 50,
-  },
-  {
-    icon: <FaMedal size={50} />,
-    title: "مشاريع منتهية",
-    num: 116,
-  },
-  {
-    icon: <MdPlaylistAddCheck size={50} />,
-    title: "عملاؤنا",
-    num: 65,
-  },
-];
+// export const stats = [
+//   {
+//     icon: <AiFillProduct size={50} />,
+//     title: "منتج",
+//     num: 6,
+//   },
+//   {
+//     icon: <FaUser size={50} />,
+//     title: "موظف",
+//     num: 50,
+//   },
+//   {
+//     icon: <FaMedal size={50} />,
+//     title: "مشاريع منتهية",
+//     num: 116,
+//   },
+//   {
+//     icon: <MdPlaylistAddCheck size={50} />,
+//     title: "عملاؤنا",
+//     num: 65,
+//   },
+// ];
 
 // export const team = [
 //   {
