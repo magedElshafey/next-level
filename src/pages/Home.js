@@ -66,7 +66,7 @@ const Home = ({ services, stats, steps }) => {
             alt="contact"
             loading="lazy"
             src={contactImg}
-            className="w-full h-[550px] object-cover"
+            className="w-full h-[250px] md:h-[550px] object-cover"
           />
           <div className="container mx-auto px-8 md:px-16">
             <Contact />
