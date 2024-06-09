@@ -6,6 +6,7 @@ import ContactHeader from "./ContactHeader";
 import Ending from "./Ending";
 import Meta from "../components/common/Meta";
 import { useGlobalContext } from "../global/GlobalContext";
+import FixedBtns from "../components/common/FixedBtn";
 const MainLayout = ({ navLinks }) => {
   const { data } = useGlobalContext();
   return (
@@ -15,6 +16,7 @@ const MainLayout = ({ navLinks }) => {
         title={data?.site?.title}
         desc={data?.site?.description}
       />
+      <FixedBtns whatsapp={data?.contact.whatsapp} />
       <ContactHeader />
       <Navbar links={navLinks} />
       <div className="main">
