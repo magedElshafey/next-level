@@ -3,7 +3,8 @@ import serv from "../../assets/serv.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-const Services = ({ data }) => {
+import { useGlobalContext } from "../../global/GlobalContext";
+const Services = () => {
   const settings = {
     dots: false,
     infinite: true,
@@ -39,6 +40,7 @@ const Services = ({ data }) => {
       },
     ],
   };
+  const { data } = useGlobalContext();
   return (
     <div
       style={{
@@ -57,17 +59,21 @@ const Services = ({ data }) => {
           خدماتنا
         </p>
         <Slider {...settings}>
-          {data.map((item, index) => (
+          {data?.our_services.map((item, index) => (
             <div key={index} className="px-3">
               <div className=" rounded-lg bg-white p-3 min-h-[300px] flex items-center justify-center">
                 <div>
                   <div className=" bg-secondColor mx-auto text-white flex items-center justify-center w-20 h-20 rounded-[50%]">
-                    <p>{item.icon}</p>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className=" w-10 h-10 object-cover"
+                    />
                   </div>
                   <p className="font-bold text-center text-xl md:text-2xl  text-darkColor my-3">
                     {item.title}
                   </p>
-                  <p className="text-slate-600 text-end">{item.desc}</p>
+                  <p className="text-slate-600 text-end">{item.description}</p>
                 </div>
               </div>
             </div>

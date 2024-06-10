@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import MainBtn from "../common/MainBtn";
+import { useGlobalContext } from "../../global/GlobalContext";
 
 const Contact = () => {
+  const { data } = useGlobalContext();
   return (
     <div>
       <p className="text-center mb-8  text-xl md:text-2xl lg:text-3xl font-extrabold text-mainColor">
@@ -56,24 +58,12 @@ const Contact = () => {
               id="services"
               className="w-full py-2 px-6 focus:outline-none border focus:border-mainColor rounded-lg caret-mainColor"
             >
-              <option value="">اختر خدمة</option>
-              <option value="">التصميم</option>
-              <option value="">البرمجة</option>
-              <option value="">التسويق</option>
-              <option value="">التسويق</option>
-              <option value="">التسويق</option>
-              <option value="">التسويق</option>
-              <option value="">التسويق</option>
-              <option value="">التسويق</option>
-              <option value="">اختر خدمة</option>
-              <option value="">التصميم</option>
-              <option value="">البرمجة</option>
-              <option value="">التسويق</option>
-              <option value="">التسويق</option>
-              <option value="">التسويق</option>
-              <option value="">التسويق</option>
-              <option value="">التسويق</option>
-              <option value="">التسويق</option>
+              <option value="">-- اختر خدمة --</option>
+              {data?.our_services?.map((item, index) => (
+                <option key={index} value={item.id}>
+                  {item.title}
+                </option>
+              ))}
             </select>
           </div>
         </div>

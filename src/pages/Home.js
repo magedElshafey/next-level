@@ -15,7 +15,7 @@ import Steps from "../components/home/Steps";
 import Reviews from "../components/home/Reviews";
 import ContactDetails from "../components/home/ContactDetails";
 import { useGlobalContext } from "../global/GlobalContext";
-const Home = ({ services, stats, steps }) => {
+const Home = ({ stats, steps }) => {
   const navigate = useNavigate();
   const handleWorksButtonClick = (index) => {
     navigate(`/works/${++index}`);
@@ -37,7 +37,7 @@ const Home = ({ services, stats, steps }) => {
         <About />
       </div>
 
-      <Services data={services} />
+      <Services />
 
       <div className="container mx-auto px-8 md:px-16 my-8 md:my-12 overflow-x-hidden">
         <p className="text-center mb-4 text-xl md:text-2xl lg:text-3xl font-extrabold text-mainColor">
