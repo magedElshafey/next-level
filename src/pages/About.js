@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../components/common/Hero";
-import heroAbout from "../assets/hero-about.jpg";
+import heroAbout from "../assets/من نحن.png";
 import Spinner from "../components/common/Spinner";
 import { useQuery } from "react-query";
 import { request } from "../services/axios";
@@ -32,7 +32,7 @@ const About = () => {
                   <img
                     alt="about/img"
                     src={item.image}
-                    className="w-full h-[300px] md:h-[450px] object-cover"
+                    className="w-full h-[300px] md:h-[400px] object-cover"
                     loading="lazy"
                   />
                 </div>

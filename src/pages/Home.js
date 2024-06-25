@@ -1,6 +1,5 @@
 import React from "react";
 import Hero from "../components/common/Hero";
-import heroImg from "../assets/heroHome.jpg";
 import Featuers from "../components/home/Featuers";
 import About from "../components/home/About";
 import Services from "../components/home/Services";
@@ -8,7 +7,7 @@ import MainCard from "../components/common/MainCard";
 import { useNavigate } from "react-router-dom";
 import Statistics from "../components/home/Statistics";
 import Contact from "../components/home/Contact";
-import contactImg from "../assets/contact.jpg";
+import contactImg from "../assets/5124556-min.jpg";
 import Clients from "../components/home/Clients";
 import Team from "../components/home/Team";
 import Steps from "../components/home/Steps";
@@ -23,7 +22,7 @@ const Home = ({ stats, steps }) => {
   const { data } = useGlobalContext();
   return (
     <div className="overflow-x-hidden">
-      <Hero img={data.banner[0]} text="الرئيسية" hasImg={true} />
+      <Hero img={data.banner[0]} hasImg={true} />
       <div className=" bg-bgColor w-screen py-4 flex items-center">
         <div className="container mx-auto px-8 md:px-16 mt-8 md:mt-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">

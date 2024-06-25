@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../components/common/Hero";
-import heroImg from "../assets/heroServices.jpg";
+import heroImg from "../assets/خدماتنا.png";
 import { useQuery } from "react-query";
 import Spinner from "../components/common/Spinner";
 import { request } from "../services/axios";

@@ -3,7 +3,7 @@ import Spinner from "../components/common/Spinner";
 import { request } from "../services/axios";
 import { useQuery } from "react-query";
 import Hero from "../components/common/Hero";
-import heroImg from "../assets/heroWorks.jpg";
+import heroImg from "../assets/اعمالنا.png";
 import { useNavigate } from "react-router-dom";
 import Clients from "../components/home/Clients";
 import { useGlobalContext } from "../global/GlobalContext";

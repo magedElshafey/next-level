@@ -31,7 +31,7 @@ const Service = () => {
         hasImg={true}
       />
       <div className="container mx-auto px-8 md:px-16 my-8 md:my-12">
-        <div className=" bg-bgColor p-3 flex items-center">
+        <div className=" bg-bgColor py-3 flex items-center px-8">
           <div
             dangerouslySetInnerHTML={{
               __html: data?.data?.data?.service?.description,

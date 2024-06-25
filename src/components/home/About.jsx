@@ -2,7 +2,6 @@ import React from "react";
 import { useGlobalContext } from "../../global/GlobalContext";
 const About = () => {
   const { data } = useGlobalContext();
-  console.log("data from about", data);
   return (
     <div className="overflow-x-hidden">
       <div className="my-8 md:my-12 flex items-center justify-between flex-col md:flex-row gap-6 ">
@@ -15,10 +14,14 @@ const About = () => {
           />
         </div>
         <div className="md:w-1/2">
-          <p className="font-bold text-mainColor mb-4 text-lg md:text-xl lg:text-3xl">
+          <p className="font-bold text-mainColor text-center mb-4 text-lg md:text-xl lg:text-3xl">
             {data?.aboutUS.title}
           </p>
-          <p className=" text-darkColor mb-8">{data?.aboutUS.description}</p>
+          <div
+            className="  text-darkColor
+            mb-8 text-center"
+            dangerouslySetInnerHTML={{ __html: data?.aboutUS.description }}
+          ></div>
 
           <div className="w-full flex md:justify-end">
             <a

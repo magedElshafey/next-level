@@ -4,7 +4,7 @@ import Spinner from "../components/common/Spinner";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { request } from "../services/axios";
-import heroBlog from "../assets/heroBlog.jpg";
+import heroBlog from "../assets/مدونه.png";
 import MainBtn from "../components/common/MainBtn";
 const fetchData = async () => {
   return await request({

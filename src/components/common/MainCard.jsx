@@ -7,7 +7,7 @@ const MainCard = ({ data, action }) => {
         loading="lazy"
         src={data.image}
         alt={data.title}
-        className="w-full h-[200px] object-cover"
+        className="w-full h-[250px] object-cover"
       />
       <div className="p-3 pb-8">
         <p className="text-center text-mainColor font-bold  mb-3">

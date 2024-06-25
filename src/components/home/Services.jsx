@@ -4,14 +4,25 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useGlobalContext } from "../../global/GlobalContext";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { useRef } from "react";
 const Services = () => {
+  const sliderRef = useRef(null);
+  const slickNext = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
+  };
+
+  const slickPrev = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
+  };
   const settings = {
     dots: false,
     infinite: true,
     arrows: false,
-    autoplay: true, // Enable autoplay
-    speed: 500,
-    autoplaySpeed: 5000,
     slidesToShow: 4,
     verical: false,
     slidesToScroll: 1,
@@ -58,18 +69,17 @@ const Services = () => {
         <p className=" font-extrabold text-center mb-5 text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl">
           خدماتنا
         </p>
-        <Slider {...settings}>
+        <Slider dir="ltr" ref={sliderRef} {...settings}>
           {data?.our_services.map((item, index) => (
             <div key={index} className="px-3">
-              <div className=" rounded-lg bg-white p-3 min-h-[300px] flex items-center justify-center">
+              <div className=" rounded-lg bg-white p-3 h-[350px] flex items-center justify-center">
                 <div>
-                  <div className=" bg-secondColor mx-auto text-white flex items-center justify-center w-20 h-20 rounded-[50%]">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className=" w-10 h-10 object-cover"
-                    />
-                  </div>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className=" w-10 h-10 mx-auto object-cover"
+                  />
+
                   <p className="font-bold text-center text-xl md:text-2xl  text-darkColor my-3">
                     {item.title}
                   </p>
@@ -79,6 +89,20 @@ const Services = () => {
             </div>
           ))}
         </Slider>
+        <div className="flex items-center justify-end my-6 gap-4">
+          <button
+            className=" cursor-pointer flex items-center justify-center text-white bg-secondColor h-10 w-10 rounded-[50%]"
+            onClick={slickPrev}
+          >
+            <FaChevronRight />
+          </button>
+          <button
+            className=" cursor-pointer flex items-center justify-center text-white bg-secondColor h-10 w-10 rounded-[50%]"
+            onClick={slickNext}
+          >
+            <FaChevronLeft />
+          </button>
+        </div>
       </div>
     </div>
   );

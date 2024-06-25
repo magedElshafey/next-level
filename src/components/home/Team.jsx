@@ -3,14 +3,15 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useGlobalContext } from "../../global/GlobalContext";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { useRef } from "react";
 const Team = () => {
   const settings = {
     dots: false,
     infinite: true,
     arrows: false,
-    autoplay: true, // Enable autoplay
-    speed: 500,
-    autoplaySpeed: 5000,
+    autoplay: false, // Enable autoplay
+
     slidesToShow: 4,
     verical: false,
     slidesToScroll: 1,
@@ -40,29 +41,45 @@ const Team = () => {
     ],
   };
   const { data } = useGlobalContext();
+  const sliderRef = useRef(null);
+  const slickNext = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
+  };
+
+  const slickPrev = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
+  };
   return (
     <div>
       <p className="text-center mb-8 text-xl md:text-2xl lg:text-3xl font-extrabold text-mainColor">
         فريق العمل
       </p>
-      <Slider {...settings}>
+      <div className="flex items-center justify-start my-6 gap-4">
+        <button
+          className=" cursor-pointer flex items-center justify-center text-white bg-mainColor h-10 w-10 rounded-[50%]"
+          onClick={slickPrev}
+        >
+          <FaChevronRight />
+        </button>
+        <button
+          className=" cursor-pointer flex items-center justify-center text-white bg-mainColor h-10 w-10 rounded-[50%]"
+          onClick={slickNext}
+        >
+          <FaChevronLeft />
+        </button>
+      </div>
+      <Slider dir="ltr" ref={sliderRef} {...settings}>
         {data?.team.map((item, index) => (
           <div key={index} className="px-3">
-            <div className=" bg-white border-2 cursor-pointer team-box overflow-hidden ">
-              <div>
-                <img
-                  alt={item.name}
-                  src={item.image}
-                  className="w-full h-[350px] object-cover duration-300 team-img"
-                />
-                <p className="font-bold text-center text-xl md:text-2xl p-2  text-mainColor my-3">
-                  {item.name}
-                </p>
-                <p className="text-slate-600 text-end p-2 font-bold">
-                  {item.position}
-                </p>
-              </div>
-            </div>
+            <img
+              alt={item.name}
+              src={item.image}
+              className="w-full h-[350px] object-contain duration-300 team-img"
+            />
           </div>
         ))}
       </Slider>

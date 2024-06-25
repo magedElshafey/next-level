@@ -4,7 +4,7 @@ import Spinner from "../components/common/Spinner";
 import { request } from "../services/axios";
 import { useParams } from "react-router-dom";
 import Hero from "../components/common/Hero";
-import banner from "../assets/portBanner-min.jpg";
+import banner from "../assets/اعمالنا.png";
 import { FaCheckCircle } from "react-icons/fa";
 
 const fetchData = (v) => {

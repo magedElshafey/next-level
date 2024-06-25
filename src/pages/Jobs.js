@@ -5,7 +5,7 @@ import Spinner from "../components/common/Spinner";
 import Hero from "../components/common/Hero";
 import { toast } from "react-hot-toast";
 import { useTranslation } from "react-i18next";
-import heroImg from "../assets/hiring.jpg";
+import heroImg from "../assets/وظايف.png";
 const fetchData = () => {
   return request({
     url: "/jobs",
