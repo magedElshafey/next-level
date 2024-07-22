@@ -21,7 +21,7 @@ const Blogs = () => {
   }
   return (
     <div>
-      <Hero text="المدونة" img={heroBlog} hasImg={true} />
+      <Hero img={heroBlog} hasImg={true} />
       <div className="container mx-auto px-8 md:px-16 my-8 md:my-12">
         {data?.data?.data?.blogs?.length ? (
           data?.data?.data?.blogs?.map((item, index) => (

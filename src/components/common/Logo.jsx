@@ -9,7 +9,7 @@ const Logo = () => {
         loading="lazy"
         src={data?.site?.logo}
         alt="logo"
-        className="  object-cover w-[100px] md:w-[200px]"
+        className="  object-cover w-[100px] md:w-[150px]"
       />
     </Link>
   );

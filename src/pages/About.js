@@ -18,7 +18,7 @@ const About = () => {
   }
   return (
     <div>
-      <Hero text="من نحن" img={heroAbout} hasImg={true} />
+      <Hero img={heroAbout} hasImg={true} />
       <div className="container mx-auto px-8 md:px-16 my-8 md:my-12">
         {data?.data?.data?.about?.length
           ? data?.data?.data?.about?.map((item, index) => (

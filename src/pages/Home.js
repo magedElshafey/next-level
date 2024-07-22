@@ -11,7 +11,6 @@ import contactImg from "../assets/5124556-min.jpg";
 import Clients from "../components/home/Clients";
 import Team from "../components/home/Team";
 import Steps from "../components/home/Steps";
-import Reviews from "../components/home/Reviews";
 import ContactDetails from "../components/home/ContactDetails";
 import { useGlobalContext } from "../global/GlobalContext";
 const Home = ({ stats, steps }) => {

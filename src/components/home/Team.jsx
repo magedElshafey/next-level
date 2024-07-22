@@ -10,13 +10,14 @@ const Team = () => {
     dots: false,
     infinite: true,
     arrows: false,
-    autoplay: false, // Enable autoplay
-
+    autoplay: true, // Enable autoplay
     slidesToShow: 4,
     verical: false,
     slidesToScroll: 1,
     initialSlide: 0,
     cssEase: "linear",
+    speed: 2000,
+    autoplaySpeed: 2000,
     verticalSwiping: false,
     responsive: [
       {
@@ -61,18 +62,18 @@ const Team = () => {
       <div className="flex items-center justify-start my-6 gap-4">
         <button
           className=" cursor-pointer flex items-center justify-center text-white bg-mainColor h-10 w-10 rounded-[50%]"
-          onClick={slickPrev}
+          onClick={slickNext}
         >
           <FaChevronRight />
         </button>
         <button
           className=" cursor-pointer flex items-center justify-center text-white bg-mainColor h-10 w-10 rounded-[50%]"
-          onClick={slickNext}
+          onClick={slickPrev}
         >
           <FaChevronLeft />
         </button>
       </div>
-      <Slider dir="ltr" ref={sliderRef} {...settings}>
+      <Slider dir="rtl" ref={sliderRef} {...settings}>
         {data?.team.map((item, index) => (
           <div key={index} className="px-3">
             <img

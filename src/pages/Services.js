@@ -20,7 +20,7 @@ const Services = () => {
   }
   return (
     <div>
-      <Hero text="خدماتنا" img={heroImg} hasImg={true} />
+      <Hero img={heroImg} hasImg={true} />
       <div className="container mx-auto px-8 md:px-16 my-8 md:my-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {data?.data?.data?.services?.length ? (

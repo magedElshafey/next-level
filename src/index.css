@@ -96,3 +96,14 @@ a.active {
 .item {
   margin-right: 10px;
 }
+
+.mainLabel {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mainInp:focus+.mainLabel,
+.mainInp:not(:placeholder-shown)+.mainLabel {
+  top: 0;
+  transform: translateY(0);
+}

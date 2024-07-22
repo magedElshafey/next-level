@@ -24,7 +24,6 @@ const Navbar = () => {
     <div className="w-screen   bg-darkColor  shadow-lg py-3 flex items-center ">
       <div className="container mx-auto px-8 md:px-16">
         <div className="w-full flex items-center justify-between">
-          <Logo />
           <div className="hidden md:block">
             <WebsiteLinks
               isFlex={true}
@@ -32,6 +31,9 @@ const Navbar = () => {
               setShowSidebar={setShowSidebar}
             />
           </div>
+
+          <Logo />
+
           <IoMdMenu
             size={30}
             className="text-white cursor-pointer md:hidden"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Spinner from "../components/common/Spinner";
 import { request } from "../services/axios";
 import { useQuery } from "react-query";
@@ -7,6 +7,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import MainBtn from "../components/common/MainBtn";
 
 import Meta from "../components/common/Meta";
+import BlogForm from "../components/blog/BlogForm";
 const fetchData = (v) => {
   return request({
     url: `/blogs/${v}`,
@@ -15,13 +16,20 @@ const fetchData = (v) => {
 const Blog = () => {
   const navigate = useNavigate();
   const handleNavigate = (id) => navigate(`/blogs/${id}`);
-  const { id } = useParams();
+  const { id, slug } = useParams();
   const { isLoading, data } = useQuery(["blogs-details", id], () =>
     fetchData(id)
   );
+  useEffect(() => {
+    if (data && !slug && data.data.data.blog.slug) {
+      // Update the URL with the slug without reloading the page
+      navigate(`/blogs/${id}/${data.data.data.blog.slug}`, { replace: true });
+    }
+  }, [data, slug, id, navigate]);
   if (isLoading) {
     return <Spinner />;
   }
+
   return (
     <>
       <Meta
@@ -31,16 +39,22 @@ const Blog = () => {
       <Hero
         text={data?.data?.data?.blog?.title}
         img={data?.data?.data?.blog?.addtionalImage}
-        hasImg={true}
+        hasImg={false}
       />
       <div className="container mx-auto px-8 md:px-16 my-8 md:my-12">
-        <div className=" bg-bgColor p-3 flex items-center">
-          <div
-            dangerouslySetInnerHTML={{
-              __html: data?.data?.data?.blog?.description,
-            }}
-          />
+        <div className="w-full flex flex-col md:flex-row gap-4">
+          <div className="w-full md:w-2/3 bg-bgColor p-3 flex items-center">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data?.data?.data?.blog?.description,
+              }}
+            />
+          </div>
+          <div className="w-full md:w-1/3 bg-white p-4 rounded-lg shadow-2xl h-[700px]">
+            <BlogForm blogId={id} />
+          </div>
         </div>
+
         {data?.data?.data?.related_blogs?.length ? (
           <div className="my-8 md:my-12">
             <p className="text-center mb-4 text-xl md:text-2xl lg:text-3xl font-extrabold text-mainColor">

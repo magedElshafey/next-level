@@ -72,18 +72,20 @@ const Services = () => {
         <Slider dir="ltr" ref={sliderRef} {...settings}>
           {data?.our_services.map((item, index) => (
             <div key={index} className="px-3">
-              <div className=" rounded-lg bg-white p-3 h-[350px] flex items-center justify-center">
+              <div className=" rounded-lg bg-white p-3 h-[380px] flex items-center justify-center">
                 <div>
                   <img
                     src={item.image}
                     alt={item.title}
-                    className=" w-10 h-10 mx-auto object-cover"
+                    className="w-24 mx-auto object-cover"
                   />
 
-                  <p className="font-bold text-center text-xl md:text-2xl  text-darkColor my-3">
+                  <p className="font-bold text-center text-lg md:text-xl   text-darkColor my-3">
                     {item.title}
                   </p>
-                  <p className="text-slate-600 text-end">{item.description}</p>
+                  <p className="text-slate-600  text-center">
+                    {item.description}
+                  </p>
                 </div>
               </div>
             </div>

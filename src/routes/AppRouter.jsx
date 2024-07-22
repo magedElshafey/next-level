@@ -42,7 +42,7 @@ const router = createBrowserRouter([
         element: <Services />,
       },
       {
-        path: "/services/:id",
+        path: "/services/:id/:slig?",
         element: <Service />,
       },
       {
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         element: <Blogs />,
       },
       {
-        path: "/blogs/:id",
+        path: "/blogs/:id/:slug?",
         element: <Blog />,
       },
       {
