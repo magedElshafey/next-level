@@ -18,7 +18,6 @@ const BlogForm = ({ blogId }) => {
   const [phoneError, setPhoneError] = useState("");
   const [msg, setMsg] = useState("");
   const [service, setService] = useState("");
-  console.log("services id", service);
   const handleNameChange = (e) => {
     const inputValue = e.target.value;
     // Regular expression to check if the input contains only letters
