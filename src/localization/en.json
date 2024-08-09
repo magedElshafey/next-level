@@ -17,5 +17,22 @@
   "path": "Target Career Path",
   "salary": "salary",
   "reason": "What makes you qualified for the job ?",
-  "send": "send"
+  "send": "send",
+  "ar": "arabic",
+  "en": "english",
+  "call us": "call us",
+  "our services": "our services",
+  "our works": "our works",
+  "contact us": "contact us",
+  "service need": "service need",
+  "select the service": "select the service",
+  "happy clients": "Clients we are happy to serve",
+  "team members": "team members",
+  "links": "links",
+  "follow us": "follow us",
+  "copyRight": "All rights reserved to the company",
+  "see more": "see more",
+  "no services": "no services",
+  "no blogs": "no blogs",
+  "related blogs": "related blogs"
 }

@@ -1,7 +1,10 @@
 import React from "react";
 import { useGlobalContext } from "../../global/GlobalContext";
+import { useTranslation } from "react-i18next";
+
 const About = () => {
   const { data } = useGlobalContext();
+  const { t } = useTranslation();
   return (
     <div className="overflow-x-hidden">
       <div className="my-8 md:my-12 flex items-center justify-between flex-col md:flex-row gap-6 ">
@@ -30,7 +33,7 @@ const About = () => {
               target="_blank"
               className="bg-secondColor  py-3 px-6 flex items-center justify-center  border-darkColor  text-white duration-300 hover:bg-mainColor w-[200px] rounded-lg"
             >
-              اتصل بنا
+              {t("call us")}
             </a>
           </div>
         </div>

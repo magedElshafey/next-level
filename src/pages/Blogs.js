@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { request } from "../services/axios";
 import heroBlog from "../assets/مدونه.png";
 import MainBtn from "../components/common/MainBtn";
+import { useTranslation } from "react-i18next";
 const fetchData = async () => {
   return await request({
     url: "/blogs",
@@ -14,6 +15,7 @@ const fetchData = async () => {
 
 const Blogs = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const handleNavigate = (id) => navigate(`/blogs/${id}`);
   const { isLoading, data } = useQuery("blogs", fetchData);
   if (isLoading) {
@@ -37,7 +39,7 @@ const Blogs = () => {
                 <img
                   alt="about/img"
                   src={item.image}
-                  className="w-full h-[300px] md:h-[450px] object-cover"
+                  className="w-full h-[300px] object-contain"
                   loading="lazy"
                 />
               </div>
@@ -54,7 +56,7 @@ const Blogs = () => {
                 <div className="w-full flex justify-center">
                   <MainBtn
                     action={() => handleNavigate(item.id)}
-                    text="مشاهدة المزيد"
+                    text={t("see more")}
                   />
                 </div>
               </div>
@@ -62,7 +64,7 @@ const Blogs = () => {
           ))
         ) : (
           <p className="w-full flex items-center font-bold text-darkColor">
-            لا يوجد مقالات الان
+            {t("no blogs")}
           </p>
         )}
       </div>

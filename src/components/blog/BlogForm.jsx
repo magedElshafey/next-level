@@ -119,12 +119,12 @@ const BlogForm = ({ blogId }) => {
   return (
     <div>
       <p className=" mb-6 text-center font-extrabold text-lg md:text-xl lg:text-2xl xl:text-3xl pt-5 h-fit">
-        تواصل معنا
+        {t("contact us")}
       </p>
       <form>
         <div className="mb-4">
           <label htmlFor="name" className="block mb-1 text-mainColor">
-            الإسم بالكامل
+            {t("name")}{" "}
           </label>
           <input
             className="w-full py-2 px-6 focus:outline-none border focus:border-mainColor rounded-lg caret-mainColor"
@@ -139,7 +139,7 @@ const BlogForm = ({ blogId }) => {
         </div>
         <div className="mb-4">
           <label htmlFor="phone" className="block mb-1 text-mainColor">
-            رقم الواتساب لسهولة التواصل
+            {t("phone")}{" "}
           </label>
           <input
             className="w-full py-2 px-6 focus:outline-none border focus:border-mainColor rounded-lg caret-mainColor"
@@ -170,14 +170,14 @@ const BlogForm = ({ blogId }) => {
         </div>
         <div className="mb-4">
           <label htmlFor="services" className="block mb-1 text-mainColor">
-            الخدمة المطلوبة
+            {t("service need")}{" "}
           </label>
           <select
             id="services"
             onChange={handleChangeServices}
             className="w-full py-2 px-6 focus:outline-none border focus:border-mainColor rounded-lg caret-mainColor"
           >
-            <option value="">-- اختر خدمة --</option>
+            <option value="">-- {t("select the service")} --</option>
             {data?.our_services?.map((item, index) => (
               <option key={index} value={item.id}>
                 {item.title}
@@ -188,7 +188,7 @@ const BlogForm = ({ blogId }) => {
 
         <div className="mb-4">
           <label htmlFor="message" className="block mb-1 text-mainColor">
-            رسالتك
+            {t("message")}
           </label>
           <textarea
             className="w-full h-32 py-2 px-6 focus:outline-none border focus:border-mainColor rounded-lg caret-mainColor"
@@ -200,7 +200,7 @@ const BlogForm = ({ blogId }) => {
         <div className="flex justify-center ">
           <MainBtn
             disabled={isLoading}
-            text="ارسال"
+            text={t("send")}
             action={handleSubmit}
             type="submit"
           />

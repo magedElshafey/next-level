@@ -41,26 +41,32 @@ export const navLinks = [
   {
     title: "الرئيسية",
     path: "",
+    enTitle: "home",
   },
   {
     title: "من نحن",
     path: "/about",
+    enTitle: "about us",
   },
   {
     title: "اعمالنا",
     path: "/works",
+    enTitlte: "Our Works",
   },
   {
     title: "الخدمات",
     path: "/services",
+    enTitle: "services",
   },
   {
     title: "المدونة",
     path: "/blogs",
+    enTitle: "blogs",
   },
   {
     title: "الوظائف",
     path: "/jobs",
+    enTitle: "Jobs",
   },
 ];
 
@@ -228,24 +234,36 @@ export const steps = [
     title: "إختر الخدمة",
     desc: "إختر الخدمة المٌناسبة لتحقيق هدفك من بين خدمتنا المُختلفة",
     icon: <FaRegCheckCircle size={20} />,
+    enTitle: "select the service",
+    enDesc:
+      "Select the most suitable service to meet your needs from our diverse offerings.",
   },
   {
     step: 2,
     title: "عرض السعر و التعاقد",
     desc: "فريقنا من الخبراء في مجالاتهم يسعون دائماً في مساعدة عملاءنا على تحقيق أهدافهم.",
     icon: <FaPencilRuler size={20} />,
+    enDesc:
+      "We offer competitive pricing and flexible contracts. Our team of experts is dedicated to helping our clients achieve their goals.",
+    enTitle: "Price quote and contract",
   },
   {
     step: 3,
     title: "رحلة التحول الرقمي",
     desc: "نحرص على تزويدك بالحلول الرقمية المبتكرة، معتمدين على خبراتنا الكبيرة في مجال تكنولوجيا المعلومات",
     icon: <FaMedal size={20} />,
+    enTitle: "Digital transformation journey",
+    enDesc:
+      "We are keen to provide you with innovative digital solutions, relying on our extensive experience in the field of information technology",
   },
   {
     step: 4,
     title: "الإنطلاق",
     desc: "نسعى دائماً لخدمة عملاؤنا على مدار الساعة ، كما نقوم بتدريب فريق العمل لديك",
     icon: <FaRocket size={20} />,
+    enTitle: "Launch",
+    enDesc:
+      "We always strive to serve our customers around the clock, and we also train your work team",
   },
 ];
 

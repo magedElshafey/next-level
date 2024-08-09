@@ -6,7 +6,9 @@ import "slick-carousel/slick/slick-theme.css";
 import { useGlobalContext } from "../../global/GlobalContext";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 const Services = () => {
+  const { i18n, t } = useTranslation();
   const sliderRef = useRef(null);
   const slickNext = () => {
     if (sliderRef.current) {
@@ -67,7 +69,7 @@ const Services = () => {
     >
       <div className="container mx-auto px-8 md:px-16">
         <p className=" font-extrabold text-center mb-5 text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl">
-          خدماتنا
+          {t("our services")}
         </p>
         <Slider dir="ltr" ref={sliderRef} {...settings}>
           {data?.our_services.map((item, index) => (
@@ -96,13 +98,13 @@ const Services = () => {
             className=" cursor-pointer flex items-center justify-center text-white bg-secondColor h-10 w-10 rounded-[50%]"
             onClick={slickPrev}
           >
-            <FaChevronRight />
+            {i18n.language === "ar" ? <FaChevronRight /> : <FaChevronLeft />}
           </button>
           <button
             className=" cursor-pointer flex items-center justify-center text-white bg-secondColor h-10 w-10 rounded-[50%]"
             onClick={slickNext}
           >
-            <FaChevronLeft />
+            {i18n.language === "ar" ? <FaChevronLeft /> : <FaChevronRight />}
           </button>
         </div>
       </div>

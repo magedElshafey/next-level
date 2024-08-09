@@ -7,8 +7,8 @@ const client = axios.create({
   baseURL: "https://admin.nxtlvladv.com/api",
   headers: {
     "Content-Type": "application/json",
-    lang: "ar",
-    "Accept-Language": "ar",
+    lang: lang,
+    "Accept-Language": lang,
     "Access-Control-Allow-Credentials": true,
   },
 });

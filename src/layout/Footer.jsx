@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import SocialMedia from "../components/common/SocialMedia";
 import Logo from "../components/common/Logo";
 import { useGlobalContext } from "../global/GlobalContext";
+import { useTranslation } from "react-i18next";
 const Footer = ({ navLinks }) => {
   const currentYear = new Date().getFullYear();
   const { data } = useGlobalContext();
+  const { t, i18n } = useTranslation();
   return (
     <>
       <div className="w-screen py-3 flex items-center bg-darkColor text-white">
@@ -13,11 +15,10 @@ const Footer = ({ navLinks }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-between gap-6 md:gap-8 lg:gap-16">
             <div>
               <Logo />
-              <p className=" text-slate-300 mt-5">{data?.site?.selgon}</p>
             </div>
             <div>
               <p className="font-bold mb-4 text-lg md:text-xl lg:text-2xl">
-                روابط هامة
+                {t("links")}
               </p>
               <ul>
                 {navLinks.map((link, index) => (
@@ -26,7 +27,7 @@ const Footer = ({ navLinks }) => {
                       to={link.path}
                       className=" text-slate-300 hover:text-white hover:underline"
                     >
-                      {link.title}
+                      {i18n.language === "ar" ? link.title : link.enTitle}
                     </Link>
                   </li>
                 ))}
@@ -34,7 +35,7 @@ const Footer = ({ navLinks }) => {
             </div>
             <div>
               <p className="font-bold mb-4 text-lg md:text-xl lg:text-2xl">
-                تواصل معنا
+                {t("contact us")}
               </p>
               <ul>
                 <li className="mb-3">
@@ -65,7 +66,7 @@ const Footer = ({ navLinks }) => {
             </div>
             <div>
               <p className="font-bold mb-4 text-lg md:text-xl lg:text-2xl">
-                تابعنا
+                {t("follow us")}
               </p>
               <SocialMedia />
             </div>
@@ -74,7 +75,7 @@ const Footer = ({ navLinks }) => {
       </div>
       <div className="w-full flex items-center  justify-center py-2 bg-bgColor">
         <p className="text-xs md:text-sm lg:text-base">
-          جميع الحقوق محفوظة لدى شركة{" "}
+          {t("copyRight")}
           <a
             href="https://nxtlvladv.com/"
             target="_blank"

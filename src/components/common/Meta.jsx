@@ -1,13 +1,18 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import icon from "../../assets/fav icon.png";
+import { useTranslation } from "react-i18next";
 const Meta = ({ title, desc, fav }) => {
+  const { i18n } = useTranslation();
   return (
     <Helmet>
       <meta charSet="utf-8" />
-      <title>{title}</title>
+      <title>
+        {title ? title : i18n.language === "ar" ? "نيسكت ليفب" : "Next Level"}
+      </title>
       <meta name="description" content={desc} />
-      <link rel="icon" href={fav} />
-      <link rel="canonical" href="http://mysite.com/example" />
+      <link rel="icon" href={fav ? fav : icon} />
+
       <script>
         {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

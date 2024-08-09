@@ -6,12 +6,14 @@ import Spinner from "../components/common/Spinner";
 import { request } from "../services/axios";
 import MainCard from "../components/common/MainCard";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 const fetchData = () => {
   return request({
     url: "/services",
   });
 };
 const Services = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const handleNavigate = (id) => navigate(`/services/${id}`);
   const { isLoading, data } = useQuery("services", fetchData);
@@ -33,7 +35,7 @@ const Services = () => {
             ))
           ) : (
             <p className="w-full flex items-center justify-center font-bold text-darkColor">
-              لا يوجد خدمات الان
+              {t("no services")}
             </p>
           )}
         </div>

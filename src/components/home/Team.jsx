@@ -5,7 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import { useGlobalContext } from "../../global/GlobalContext";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 const Team = () => {
+  const { t, i18n } = useTranslation();
   const settings = {
     dots: false,
     infinite: true,
@@ -57,20 +59,20 @@ const Team = () => {
   return (
     <div>
       <p className="text-center mb-8 text-xl md:text-2xl lg:text-3xl font-extrabold text-mainColor">
-        فريق العمل
+        {t("team members")}
       </p>
       <div className="flex items-center justify-start my-6 gap-4">
         <button
           className=" cursor-pointer flex items-center justify-center text-white bg-mainColor h-10 w-10 rounded-[50%]"
           onClick={slickNext}
         >
-          <FaChevronRight />
+          {i18n.language === "ar" ? <FaChevronRight /> : <FaChevronLeft />}
         </button>
         <button
           className=" cursor-pointer flex items-center justify-center text-white bg-mainColor h-10 w-10 rounded-[50%]"
           onClick={slickPrev}
         >
-          <FaChevronLeft />
+          {i18n.language === "ar" ? <FaChevronLeft /> : <FaChevronRight />}
         </button>
       </div>
       <Slider dir="rtl" ref={sliderRef} {...settings}>

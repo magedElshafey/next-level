@@ -1,6 +1,8 @@
 import React from "react";
 import MainBtn from "./MainBtn";
+import { useTranslation } from "react-i18next";
 const MainCard = ({ data, action }) => {
+  const { t } = useTranslation();
   return (
     <div className="bg-white shadow-lg relative box cursor-pointer">
       <img
@@ -20,7 +22,7 @@ const MainCard = ({ data, action }) => {
           className=" text-darkColor mb-4"
         ></p>
         <div className="flex items-center justify-center">
-          <MainBtn text="مشاهدة المزيد" action={action} />
+          <MainBtn text={t("see more")} action={action} />
         </div>
         <div className=" absolute bottom-0 left-0 w-full h-[4px] duration-300 bg-secondColor line rounded-[5px]"></div>
       </div>

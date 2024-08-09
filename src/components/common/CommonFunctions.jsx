@@ -2,11 +2,12 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Aos from "aos";
 const CommonFunctions = () => {
+  const { i18n } = useTranslation();
   // lang
   useEffect(() => {
     localStorage.setItem("lang", JSON.stringify(i18n.language));
-  }, []);
-  const { i18n } = useTranslation();
+  }, [i18n.language]);
+
   // handle language
   useEffect(() => {
     document.documentElement.setAttribute("lang", i18n.language);

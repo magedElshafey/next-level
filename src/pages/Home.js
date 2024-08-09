@@ -13,7 +13,9 @@ import Team from "../components/home/Team";
 import Steps from "../components/home/Steps";
 import ContactDetails from "../components/home/ContactDetails";
 import { useGlobalContext } from "../global/GlobalContext";
+import { useTranslation } from "react-i18next";
 const Home = ({ stats, steps }) => {
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const handleWorksButtonClick = (index) => {
     navigate(`/works/${++index}`);
@@ -24,7 +26,11 @@ const Home = ({ stats, steps }) => {
       <Hero img={data.banner[0]} hasImg={true} />
       <div className=" bg-bgColor w-screen py-4 flex items-center">
         <div className="container mx-auto px-8 md:px-16 mt-8 md:mt-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+          <div
+            className={`grid ${
+              i18n.language === "ar" ? "grid-cols-2" : "grid-cols-1"
+            } lg:grid-cols-4 gap-4 md:gap-8`}
+          >
             {data?.features.map((item, index) => (
               <Featuers key={index} data={item} />
             ))}
@@ -39,7 +45,7 @@ const Home = ({ stats, steps }) => {
 
       <div className="container mx-auto px-8 md:px-16 my-8 md:my-12 overflow-x-hidden">
         <p className="text-center mb-4 text-xl md:text-2xl lg:text-3xl font-extrabold text-mainColor">
-          أعمالنا
+          {t("our works")}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {data.work.slice(0, 4).map((item, index) => (

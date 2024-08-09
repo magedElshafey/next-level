@@ -445,7 +445,7 @@ const Jobs = () => {
               <button
                 disabled={sending}
                 type="submit"
-                className="flex justify-center items-center py-3 px-6 bg-mainColor text-white font-bold w-[200px] rounded-lg"
+                className="flex justify-center items-center py-3 px-6 bg-mainColor text-white font-bold w-[200px] rounded-lg capitalize"
               >
                 {t("send")}
               </button>

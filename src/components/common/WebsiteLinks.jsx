@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 const WebsiteLinks = ({ isFlex, data, setShowSidebar }) => {
+  const { i18n } = useTranslation();
   const handleLinkClick = () => {
     if (!isFlex) {
       setShowSidebar(false);
@@ -18,7 +19,7 @@ const WebsiteLinks = ({ isFlex, data, setShowSidebar }) => {
             to={link.path}
             className="text-white font-bold"
           >
-            {link.title}
+            {i18n.language === "ar" ? link.title : link.enTitle}
           </NavLink>
         </li>
       ))}

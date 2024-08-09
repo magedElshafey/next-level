@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useTranslation } from "react-i18next";
 const Steps = ({ data }) => {
+  const { i18n } = useTranslation();
   return (
     <div className="flex flex-col items-center justify-center gap-2">
       <div className="relative">
@@ -14,10 +15,12 @@ const Steps = ({ data }) => {
           <p>{data.icon}</p>
         </div>
       </div>
-      <p className=" font-extrabold text-white text-lg md:text-xl lg:text-2xl xl:text-3xl">
-        {data.title}
+      <p className=" font-extrabold text-white text-lg md:text-xl \">
+        {i18n.language === "ar" ? data.title : data.enTitle}
       </p>
-      <p className=" text-slate-400 text-center">{data.desc}</p>
+      <p className=" text-slate-400 text-center">
+        {i18n.language === "ar" ? data.desc : data.enDesc}
+      </p>
     </div>
   );
 };

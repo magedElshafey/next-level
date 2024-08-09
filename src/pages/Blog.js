@@ -5,7 +5,7 @@ import { useQuery } from "react-query";
 import Hero from "../components/common/Hero";
 import { useParams, useNavigate } from "react-router-dom";
 import MainBtn from "../components/common/MainBtn";
-
+import { useTranslation } from "react-i18next";
 import Meta from "../components/common/Meta";
 import BlogForm from "../components/blog/BlogForm";
 const fetchData = (v) => {
@@ -16,6 +16,7 @@ const fetchData = (v) => {
 const Blog = () => {
   const navigate = useNavigate();
   const handleNavigate = (id) => navigate(`/blogs/${id}`);
+  const { t } = useTranslation();
   const { id, slug } = useParams();
   const { isLoading, data } = useQuery(["blogs-details", id], () =>
     fetchData(id)
@@ -50,7 +51,7 @@ const Blog = () => {
               }}
             />
           </div>
-          <div className="w-full md:w-1/3 bg-white p-4 rounded-lg shadow-2xl h-[700px]">
+          <div className="w-full md:w-1/3 bg-white p-4 rounded-lg shadow-2xl h-[700px] md:sticky md:top-0">
             <BlogForm blogId={id} />
           </div>
         </div>
@@ -58,7 +59,7 @@ const Blog = () => {
         {data?.data?.data?.related_blogs?.length ? (
           <div className="my-8 md:my-12">
             <p className="text-center mb-4 text-xl md:text-2xl lg:text-3xl font-extrabold text-mainColor">
-              مقالات اخري قد تنال اعجابك
+              {t("related blogs")}
             </p>
             {data?.data?.data?.related_blogs.slice(0, 4).map((item, index) => (
               <div
@@ -88,7 +89,7 @@ const Blog = () => {
                   <div className="w-full flex justify-center">
                     <MainBtn
                       action={() => handleNavigate(item.id)}
-                      text="مشاهدة المزيد"
+                      text={t("see more")}
                     />
                   </div>
                 </div>

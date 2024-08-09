@@ -6,7 +6,11 @@ import WebsiteLinks from "../components/common/WebsiteLinks";
 import { navLinks } from "../data/data";
 import SocialMedia from "../components/common/SocialMedia";
 
+import { useTranslation } from "react-i18next";
+import LangMenu from "../components/common/LangMenu";
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
+
   const [showSidebar, setShowSidebar] = useState(false);
   const sidebarRef = useRef();
   const handleClickOutside = (event) => {
@@ -20,25 +24,30 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
   return (
     <div className="w-screen   bg-darkColor  shadow-lg py-3 flex items-center ">
       <div className="container mx-auto px-8 md:px-16">
         <div className="w-full flex items-center justify-between">
           <div className="hidden md:block">
-            <WebsiteLinks
-              isFlex={true}
-              data={navLinks}
-              setShowSidebar={setShowSidebar}
+            <div className="flex items-center gap-3">
+              <WebsiteLinks
+                isFlex={true}
+                data={navLinks}
+                setShowSidebar={setShowSidebar}
+              />
+              <LangMenu />
+            </div>
+          </div>
+          <Logo />
+          <div className="flex items-center gap-3 md:hidden">
+            <LangMenu />
+            <IoMdMenu
+              size={30}
+              className="text-white cursor-pointer md:hidden"
+              onClick={() => setShowSidebar(true)}
             />
           </div>
-
-          <Logo />
-
-          <IoMdMenu
-            size={30}
-            className="text-white cursor-pointer md:hidden"
-            onClick={() => setShowSidebar(true)}
-          />
         </div>
         <div
           ref={sidebarRef}
