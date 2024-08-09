@@ -19,7 +19,7 @@ const Service = () => {
     fetchData(id)
   );
   useEffect(() => {
-    if (data && !slug && data?.data?.data?.blog?.slug) {
+    if (data && !slug && data?.data?.data?.service?.slug) {
       // Update the URL with the slug without reloading the page
       navigate(`/services/${id}/${data?.data?.data?.service?.slug}`, {
         replace: true,
