@@ -40,13 +40,15 @@ const Service = () => {
         img={data?.data?.data?.service.image}
         hasImg={false}
       />
-      <div className="container mx-auto px-8 md:px-16 my-8 md:my-12">
-        <div className=" bg-bgColor py-3 flex items-center px-8 mb-8 lg:mb-12">
-          <div
-            dangerouslySetInnerHTML={{
-              __html: data?.data?.data?.service?.description,
-            }}
-          />
+      <div>
+        <div className="container mx-auto px-8 md:px-16 my-8 md:my-12">
+          <div className=" bg-bgColor py-3 flex items-center px-8 mb-8 lg:mb-12">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data?.data?.data?.service?.description,
+              }}
+            />
+          </div>
         </div>
         <ServiceForm serviceId={id} />
       </div>

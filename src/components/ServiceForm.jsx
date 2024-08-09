@@ -61,18 +61,23 @@ const ServiceForm = ({ serviceId }) => {
   };
   const handleSendData = (data) => {
     return request({
-      url: "/",
+      url: "/service-contact",
       method: "POST",
       data,
     });
   };
   const { isLoading, mutate } = useMutation(handleSendData, {
     onSuccess: (data) => {
-      setName("");
-      setEmail("");
-      setPhone("");
-      setCompnay("");
-      setMsg("");
+      if (data?.data?.status) {
+        toast.success(data?.data?.message);
+        setName("");
+        setEmail("");
+        setPhone("");
+        setCompnay("");
+        setMsg("");
+      } else {
+        toast.error(data?.response?.data?.message);
+      }
     },
     onError: (data) => {},
   });
@@ -98,7 +103,7 @@ const ServiceForm = ({ serviceId }) => {
       return;
     } else {
       const userData = {
-        serviceId,
+        service_id: serviceId,
         name,
         email,
         phone,
@@ -110,18 +115,21 @@ const ServiceForm = ({ serviceId }) => {
   };
   return (
     <div className="w-full bg-darkColor p-5 text-white px-6">
-      <div className="w-full flex items-center gap-5 justify-between">
-        <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold">
-          {t("contact us")}
-        </p>
-        <div className="">
-          <div className="grid grid-cols-1 lg:grid-cols-2 mb-4 gap-6">
+      <div className="container mx-auto px-8 md:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+          <div>
+            <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold mb-5">
+              {t("contact us")}
+            </p>
+            <div className="text-slate-300">{t("contact hint")}</div>
+          </div>
+          <form onSubmit={handleSubmit} className="w-full">
             <div>
               <input
                 className="w-full py-2 px-6 focus:outline-none border-b border-b-white duration-300 bg-transparent mainInp caret-mainColor text-slate-300"
                 type="text"
                 id="name"
-                placeholder={t("full name")}
+                placeholder={t("name")}
                 value={name}
                 onChange={handleNameChange}
               />
@@ -129,7 +137,7 @@ const ServiceForm = ({ serviceId }) => {
                 <p className="text-red-600 text-sm my-1">{nameError}</p>
               ) : null}
             </div>
-            <div>
+            <div className="my-6">
               <input
                 className="w-full py-2 px-6 focus:outline-none border-b border-b-white duration-300 bg-transparent mainInp caret-mainColor text-slate-300"
                 type="email"
@@ -142,14 +150,12 @@ const ServiceForm = ({ serviceId }) => {
                 <p className="text-red-600 text-sm my-1">{emailError}</p>
               ) : null}
             </div>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 mb-4 gap-6">
-            <div>
+            <div className="my-6">
               <input
                 className="w-full py-2 px-6 focus:outline-none border-b border-b-white duration-300 bg-transparent mainInp caret-mainColor text-slate-300"
                 type="text"
                 id="phone"
-                placeholder={t("phone number")}
+                placeholder={t("phone")}
                 value={phone}
                 onChange={handlePhoneChange}
               />
@@ -157,7 +163,7 @@ const ServiceForm = ({ serviceId }) => {
                 <p className="text-red-600 text-sm my-1">{phoneError}</p>
               ) : null}
             </div>
-            <div>
+            <div className="my-6">
               <input
                 className="w-full py-2 px-6 focus:outline-none border-b border-b-white duration-300 bg-transparent mainInp caret-mainColor text-slate-300"
                 type="text"
@@ -167,16 +173,25 @@ const ServiceForm = ({ serviceId }) => {
                 onChange={handleCompanyChange}
               />
             </div>
-          </div>
-          <div className="mb-4">
-            <textarea
-              className="text-slate-300 border-b border-b-white w-full h-32 py-2 px-6 focus:outline-none border  bg-transparent caret-mainColor"
-              id="message"
-              value={msg}
-              onChange={handleChangeMsg}
-              placeholder={t("message")}
-            />
-          </div>
+            <div className="my-6">
+              <textarea
+                className="text-slate-300 border-b border-b-white w-full h-32 py-2 px-6 focus:outline-none   bg-transparent caret-mainColor"
+                id="message"
+                value={msg}
+                onChange={handleChangeMsg}
+                placeholder={t("message")}
+              />
+            </div>
+            <div className="w-full flex justify-center md:justify-end">
+              <button
+                className="bg-white flex items-center justify-center text-mainColor border border-mainColor p-3 rounded-md min-w-[180px]"
+                type="submit"
+                disabled={isLoading}
+              >
+                {t("send")}
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -184,3 +199,19 @@ const ServiceForm = ({ serviceId }) => {
 };
 
 export default ServiceForm;
+/**
+ *   <div className="w-full flex items-center gap-5 justify-center">
+     
+        <div className="">
+          <div className="grid grid-cols-1 lg:grid-cols-2 mb-4 gap-6">
+            
+           
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 mb-4 gap-6">
+           
+           
+          </div>
+         
+        </div>
+      </div>
+ */

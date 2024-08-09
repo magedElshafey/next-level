@@ -69,18 +69,24 @@ const BlogForm = ({ blogId }) => {
   };
   const handleSendData = (data) => {
     return request({
-      url: "/",
+      url: "/blog-contact",
       method: "POST",
       data,
     });
   };
   const { isLoading, mutate } = useMutation(handleSendData, {
     onSuccess: (data) => {
-      setName("");
-      setEmail("");
-      setPhone("");
-      setService("");
-      setMsg("");
+      console.log("data", data);
+      if (data?.data?.status) {
+        toast.success(data?.data?.message);
+        setName("");
+        setEmail("");
+        setPhone("");
+        setService("");
+        setMsg("");
+      } else {
+        toast.error(data?.response?.data?.message);
+      }
     },
     onError: (data) => {},
   });
@@ -106,11 +112,11 @@ const BlogForm = ({ blogId }) => {
       return;
     } else {
       const userData = {
-        blogId,
+        blog_id: blogId,
         name,
         email,
         phone,
-        service,
+        our_service_id: service,
         msg,
       };
       mutate(userData);
@@ -155,7 +161,7 @@ const BlogForm = ({ blogId }) => {
         </div>
         <div className="mb-4">
           <label htmlFor="email" className="block mb-1 text-mainColor">
-            البريد الإلكتروني
+            {t("email")}
           </label>
           <input
             className="w-full py-2 px-6 focus:outline-none border focus:border-mainColor rounded-lg caret-mainColor"

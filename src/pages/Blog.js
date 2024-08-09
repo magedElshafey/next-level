@@ -58,13 +58,13 @@ const Blog = () => {
 
         {data?.data?.data?.related_blogs?.length ? (
           <div className="my-8 md:my-12">
-            <p className="text-center mb-4 text-xl md:text-2xl lg:text-3xl font-extrabold text-mainColor">
+            <p className="text-center mb-8 text-xl md:text-2xl lg:text-3xl font-extrabold text-mainColor">
               {t("related blogs")}
             </p>
             {data?.data?.data?.related_blogs.slice(0, 4).map((item, index) => (
               <div
                 key={index}
-                className={`flex items-center mb-3 md:mb-3 gap-4 md:gap-8 flex-col ${
+                className={`flex items-center mb-5 gap-4  flex-col ${
                   index % 2 === 0 ? "  md:flex-row" : " md:flex-row-reverse"
                 }`}
               >
@@ -72,7 +72,7 @@ const Blog = () => {
                   <img
                     alt="about/img"
                     src={item.image}
-                    className="w-full h-[300px] md:h-[450px] object-cover"
+                    className="w-full max-h-[450px] object-contain"
                     loading="lazy"
                   />
                 </div>

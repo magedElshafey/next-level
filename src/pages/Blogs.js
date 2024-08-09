@@ -39,7 +39,7 @@ const Blogs = () => {
                 <img
                   alt="about/img"
                   src={item.image}
-                  className="w-full h-[300px] object-contain"
+                  className="w-full max-h-[450px] object-contain"
                   loading="lazy"
                 />
               </div>

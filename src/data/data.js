@@ -48,11 +48,11 @@ export const navLinks = [
     path: "/about",
     enTitle: "about us",
   },
-  {
-    title: "اعمالنا",
-    path: "/works",
-    enTitlte: "Our Works",
-  },
+  // {
+  //   title: "اعمالنا",
+  //   path: "/works",
+  //   enTitlte: "Our Works",
+  // },
   {
     title: "الخدمات",
     path: "/services",
