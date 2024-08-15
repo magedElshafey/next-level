@@ -15,7 +15,7 @@ const fetchData = async () => {
 
 const Blogs = () => {
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const handleNavigate = (id) => navigate(`/blogs/${id}`);
   const { isLoading, data } = useQuery("blogs", fetchData);
   if (isLoading) {
@@ -38,7 +38,9 @@ const Blogs = () => {
               <div className="md:w-1/2">
                 <img
                   alt="about/img"
-                  src={item.image}
+                  src={
+                    i18n.language === "ar" ? item.image : item.addtionalImage
+                  }
                   className="w-full max-h-[450px] object-contain"
                   loading="lazy"
                 />

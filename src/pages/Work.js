@@ -6,13 +6,14 @@ import { useParams } from "react-router-dom";
 import Hero from "../components/common/Hero";
 import banner from "../assets/اعمالنا.png";
 import { FaCheckCircle } from "react-icons/fa";
-
+import { useTranslation } from "react-i18next";
 const fetchData = (v) => {
   return request({
     url: `/work/${v}`,
   });
 };
 const Work = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
 
   const { isLoading, data } = useQuery(["details", id], () => fetchData(id));
@@ -41,10 +42,10 @@ const Work = () => {
             </p>
             {data?.data?.data?.work?.services?.length ? (
               <div>
-                <p className="text-secondColor font-bold text-lg md:text-xl lg:text-2xl mb-6">
-                  الخدمات المقدمة
+                <p className="text-secondColor font-bold text-lg md:text-xl lg:text-2xl mb-4">
+                  {t("our servicess")}
                 </p>
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-2">
                   {data?.data?.data?.work?.services?.map((item, index) => (
                     <div key={index} className="flex gap-2">
                       <FaCheckCircle className="text-mainColor mt-1" />
