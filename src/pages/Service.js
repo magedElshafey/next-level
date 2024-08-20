@@ -18,10 +18,31 @@ const Service = () => {
   const { isLoading, data } = useQuery(["services-details", id], () =>
     fetchData(id)
   );
+  const sanitizeSlug = (slug) => {
+    // تحويل الحروف إلى أحرف صغيرة
+    let sanitizedSlug = slug.toLowerCase();
+
+    // إزالة أي رموز غير مسموح بها باستثناء الأحرف اللاتينية والعربية والأرقام والشرطات
+    sanitizedSlug = sanitizedSlug.replace(/[^a-z0-9\u0600-\u06FF\s-]/g, "");
+
+    // استبدال المسافات بالشرطات
+    sanitizedSlug = sanitizedSlug.replace(/\s+/g, "-");
+
+    // إزالة الشرطات المكررة
+    sanitizedSlug = sanitizedSlug.replace(/-+/g, "-");
+
+    // إزالة أي شرطات في بداية أو نهاية السلاگ
+    sanitizedSlug = sanitizedSlug.replace(/^-+|-+$/g, "");
+
+    return sanitizedSlug;
+  };
   useEffect(() => {
     if (data && !slug && data?.data?.data?.service?.slug) {
-      // Update the URL with the slug without reloading the page
-      navigate(`/services/${id}/${data?.data?.data?.service?.slug}`, {
+      const originalSlug = data.data.data.service.slug;
+      const validSlug = sanitizeSlug(originalSlug);
+
+      // تحديث الـ URL باستخدام السلاگ المحسن
+      navigate(`/services/${id}/${validSlug}`, {
         replace: true,
       });
     }

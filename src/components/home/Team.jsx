@@ -38,7 +38,7 @@ const Team = () => {
       {
         breakpoint: 540,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
         },
       },
     ],
@@ -81,7 +81,7 @@ const Team = () => {
             <img
               alt={item.name}
               src={item.image}
-              className="w-full h-[350px] object-contain duration-300 team-img"
+              className="w-full h-[140px] md:h-[320px] object-cover duration-300 team-img"
             />
           </div>
         ))}

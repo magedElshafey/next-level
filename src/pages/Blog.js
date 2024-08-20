@@ -21,10 +21,30 @@ const Blog = () => {
   const { isLoading, data } = useQuery(["blogs-details", id], () =>
     fetchData(id)
   );
+  const sanitizeSlug = (slug) => {
+    // تحويل الحروف إلى أحرف صغيرة
+    let sanitizedSlug = slug.toLowerCase();
+
+    // إزالة أي رموز غير مسموح بها باستثناء الأحرف اللاتينية والعربية والأرقام والشرطات
+    sanitizedSlug = sanitizedSlug.replace(/[^a-z0-9\u0600-\u06FF\s-]/g, "");
+
+    // استبدال المسافات بالشرطات
+    sanitizedSlug = sanitizedSlug.replace(/\s+/g, "-");
+
+    // إزالة الشرطات المكررة
+    sanitizedSlug = sanitizedSlug.replace(/-+/g, "-");
+
+    // إزالة أي شرطات في بداية أو نهاية السلاگ
+    sanitizedSlug = sanitizedSlug.replace(/^-+|-+$/g, "");
+
+    return sanitizedSlug;
+  };
   useEffect(() => {
-    if (data && !slug && data.data.data.blog.slug) {
+    if (data && !slug && data?.data?.data?.blog?.slug) {
+      const originalSlug = data?.data?.data?.blog?.slug;
+      const validSlug = sanitizeSlug(originalSlug);
       // Update the URL with the slug without reloading the page
-      navigate(`/blogs/${id}/${data.data.data.blog.slug}`, { replace: true });
+      navigate(`/blogs/${id}/${validSlug}`, { replace: true });
     }
   }, [data, slug, id, navigate]);
   if (isLoading) {
