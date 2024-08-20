@@ -77,7 +77,7 @@ const Team = () => {
       </div>
       <Slider dir="rtl" ref={sliderRef} {...settings}>
         {data?.team.map((item, index) => (
-          <div key={index} className="px-3">
+          <div key={index} className="px-2">
             <img
               alt={item.name}
               src={item.image}
