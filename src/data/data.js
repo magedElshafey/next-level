@@ -51,7 +51,7 @@ export const navLinks = [
   {
     title: "اعمالنا",
     path: "/works",
-    enTitlte: "Our Works",
+    enTitle: "Works",
   },
   {
     title: "الخدمات",

@@ -80,10 +80,10 @@ const Footer = ({ navLinks }) => {
             href="https://nxtlvladv.com/"
             target="_blank"
             rel="noreferrer"
-            className="font-bold text-slate-400"
+            className="font-bold text-slate-400 mx-1 inline-block"
           >
-            next level
-          </a>{" "}
+            {i18n.language === "ar" ? "نيكست ليفل" : "next level"}
+          </a>
           © {currentYear}
         </p>
       </div>

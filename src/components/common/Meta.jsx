@@ -8,9 +8,13 @@ const Meta = ({ title, desc, fav }) => {
     <Helmet>
       <meta charSet="utf-8" />
       <title>
-        {title ? title : i18n.language === "ar" ? "نيسكت ليفب" : "Next Level"}
+        {title ? title : i18n.language === "ar" ? "نيسكت ليفل" : "Next Level"}
       </title>
       <meta name="description" content={desc} />
+      <meta
+        name="google-site-verification"
+        content="MStq-2dfoZCm0BgdKS1UdW6T0zssc59ZcJFvJslBiiM"
+      />
       <link rel="icon" href={fav ? fav : icon} />
 
       <script>
