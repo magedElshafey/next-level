@@ -76,7 +76,7 @@ a.active {
   justify-content: space-between;
   white-space: nowrap;
   animation: scroll 5s linear infinite;
-  /* Adjust duration as needed */
+
 }
 
 @keyframes scroll {
