@@ -4,7 +4,7 @@ const Hero = ({ img, text, hasImg }) => {
   return (
     <>
       {hasImg ? (
-        <div className="relative w-full max-h-[350px] md:max-h-[450px]">
+        <div className="relative w-full  md:max-h-[500px]">
           <img
             alt="hero"
             src={img}
@@ -24,7 +24,7 @@ const Hero = ({ img, text, hasImg }) => {
       ) : (
         <div className="w-screen bg-mainColor h-[350px]">
           <div className="w-full h-full flex items-center justify-center text-white font-extrabold text-xl md:text-2xl lg:text-3xl xl:text-4xl">
-            <p>{text}</p>
+            <h1>{text}</h1>
           </div>
         </div>
       )}
