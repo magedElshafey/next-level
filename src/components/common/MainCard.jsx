@@ -12,9 +12,9 @@ const MainCard = ({ data, action }) => {
         className="w-full max-h-[250px] object-cover"
       />
       <div className="p-3 pb-8">
-        <p className="text-center text-mainColor font-bold  mb-3">
+        <h1 className="text-center text-mainColor font-bold  mb-3">
           {data.title.substr(0, 100)}
-        </p>
+        </h1>
         <div className="flex items-center">
           <p
             dangerouslySetInnerHTML={{

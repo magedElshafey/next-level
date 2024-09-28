@@ -10,7 +10,7 @@ const Hero = ({ img, text, hasImg }) => {
             src={img}
             loading="lazy"
             className={`w-full ${
-              hasImg ? " max-h-[350px] md:max-h-[450px]" : "h-[250px]"
+              hasImg ? "max-h-[256px] md:max-h-[500px]" : "h-[250px]"
             } object-cover`}
           />
           <div
@@ -18,7 +18,7 @@ const Hero = ({ img, text, hasImg }) => {
               hasImg ? "bg-opacity-30" : "bg-opacity-10"
             } text-white flex items-center justify-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl`}
           >
-            <p>{text}</p>
+            <h1>{text}</h1>
           </div>
         </div>
       ) : (

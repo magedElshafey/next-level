@@ -43,20 +43,6 @@ const Home = ({ stats, steps }) => {
 
       <Services />
 
-      {/* <div className="container mx-auto px-8 md:px-16 my-8 md:my-12 overflow-x-hidden">
-        <p className="text-center mb-4 text-xl md:text-2xl lg:text-3xl font-extrabold text-mainColor">
-          {t("our works")}
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {data.work.slice(0, 4).map((item, index) => (
-            <MainCard
-              data={item}
-              key={index}
-              action={() => handleWorksButtonClick(index)}
-            />
-          ))}
-        </div>
-      </div> */}
       <div className="w-screen bg-bgColor py-5 my-8 md:my-12 flex items-center ">
         <div className="container mx-auto px-8 md:px-16 overflow-x-hidden">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">

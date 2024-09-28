@@ -46,9 +46,9 @@ const Blogs = () => {
                 />
               </div>
               <div className="md:w-1/2">
-                <p className="text-center text-mainColor font-bold  mb-3">
+                <h1 className="text-center text-mainColor font-bold  mb-3">
                   {item.title}
-                </p>
+                </h1>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: item.description.substr(0, 250),
